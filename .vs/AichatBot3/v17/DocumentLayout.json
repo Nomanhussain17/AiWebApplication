@@ -1,0 +1,694 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\views\\profilemanage\\profilemanage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\views\\profilemanage\\profilemanage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\views\\twofactor\\enable2fa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\views\\twofactor\\enable2fa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\views\\twofactor\\setupauthenticator.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\views\\twofactor\\setupauthenticator.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\views\\twofactor\\choose2famethod.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\views\\twofactor\\choose2famethod.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\views\\admin\\_userstable.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\views\\admin\\_userstable.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\controllers\\twofactorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\controllers\\twofactorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\viewmodels\\enable2faviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\viewmodels\\enable2faviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\viewmodels\\accountviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\viewmodels\\accountviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\domainmodels\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\domainmodels\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\data\\dataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\data\\dataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\controllers\\profilemanagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\controllers\\profilemanagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\services\\smssender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\services\\smssender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\services\\ismssender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\services\\ismssender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\services\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\services\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\views\\twofactor\\loginwith2fa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\views\\twofactor\\loginwith2fa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\viewmodels\\userwithrolesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\viewmodels\\userwithrolesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\areas\\identity\\pages\\account\\externallogin.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\areas\\identity\\pages\\account\\externallogin.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\views\\twofactor\\loginwithauthenticator.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\views\\twofactor\\loginwithauthenticator.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\viewmodels\\loginwith2faviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\viewmodels\\loginwith2faviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\viewmodels\\manageprofileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\viewmodels\\manageprofileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\viewmodels\\setupauthenticatorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\viewmodels\\setupauthenticatorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\viewmodels\\enableauthenticatorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\viewmodels\\enableauthenticatorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\viewmodels\\verifycodeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\viewmodels\\verifycodeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\viewmodels\\manage2faviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\viewmodels\\manage2faviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\migrations\\20250522095449_twofactorsecretfield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\migrations\\20250522095449_twofactorsecretfield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\areas\\identity\\pages\\account\\loginwith2fa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\areas\\identity\\pages\\account\\loginwith2fa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\migrations\\20250517105729_initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\migrations\\20250517105729_initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\areas\\identity\\pages\\account\\manage\\enableauthenticator.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\areas\\identity\\pages\\account\\manage\\enableauthenticator.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\areas\\identity\\pages\\account\\confirmemail.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\areas\\identity\\pages\\account\\confirmemail.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\areas\\identity\\pages\\account\\registerconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\areas\\identity\\pages\\account\\registerconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\migrations\\20250522121600_twofactorsecretfieldupdate2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\migrations\\20250522121600_twofactorsecretfieldupdate2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|c:\\users\\syed\\source\\repos\\aichatbot3\\aichatbot3\\migrations\\20250522113356_twofactorsecretfieldupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3ED648-834C-4E13-A759-C8EB8740AA23}|AichatBot3\\AichatBot3.csproj|solutionrelative:aichatbot3\\migrations\\20250522113356_twofactorsecretfieldupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "AichatBot3\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAIA1wIgAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T07:00:04.119Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "LoginWith2fa.cshtml",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Views\\TwoFactor\\LoginWith2fa.cshtml",
+              "RelativeDocumentMoniker": "AichatBot3\\Views\\TwoFactor\\LoginWith2fa.cshtml",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Views\\TwoFactor\\LoginWith2fa.cshtml",
+              "RelativeToolTip": "AichatBot3\\Views\\TwoFactor\\LoginWith2fa.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-21T08:04:25.346Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SetupAuthenticator.cshtml",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Views\\TwoFactor\\SetupAuthenticator.cshtml",
+              "RelativeDocumentMoniker": "AichatBot3\\Views\\TwoFactor\\SetupAuthenticator.cshtml",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Views\\TwoFactor\\SetupAuthenticator.cshtml",
+              "RelativeToolTip": "AichatBot3\\Views\\TwoFactor\\SetupAuthenticator.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-21T16:46:46.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Enable2FA.cshtml",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Views\\TwoFactor\\Enable2FA.cshtml",
+              "RelativeDocumentMoniker": "AichatBot3\\Views\\TwoFactor\\Enable2FA.cshtml",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Views\\TwoFactor\\Enable2FA.cshtml",
+              "RelativeToolTip": "AichatBot3\\Views\\TwoFactor\\Enable2FA.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T03:48:32.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProfileManage.cshtml",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Views\\ProfileManage\\ProfileManage.cshtml",
+              "RelativeDocumentMoniker": "AichatBot3\\Views\\ProfileManage\\ProfileManage.cshtml",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Views\\ProfileManage\\ProfileManage.cshtml",
+              "RelativeToolTip": "AichatBot3\\Views\\ProfileManage\\ProfileManage.cshtml",
+              "ViewState": "AgIAAGcCAAAAAAAAAAAQwIYCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-22T09:35:37.384Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Program.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\Program.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Program.cs",
+              "RelativeToolTip": "AichatBot3\\Program.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAE0AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T07:00:19.051Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\appsettings.json",
+              "RelativeDocumentMoniker": "AichatBot3\\appsettings.json",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\appsettings.json",
+              "RelativeToolTip": "AichatBot3\\appsettings.json",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAIwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-09T04:23:31.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Choose2FAMethod.cshtml",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Views\\TwoFactor\\Choose2FAMethod.cshtml",
+              "RelativeDocumentMoniker": "AichatBot3\\Views\\TwoFactor\\Choose2FAMethod.cshtml",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Views\\TwoFactor\\Choose2FAMethod.cshtml",
+              "RelativeToolTip": "AichatBot3\\Views\\TwoFactor\\Choose2FAMethod.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-21T17:12:07.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_UsersTable.cshtml",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Views\\Admin\\_UsersTable.cshtml",
+              "RelativeDocumentMoniker": "AichatBot3\\Views\\Admin\\_UsersTable.cshtml",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Views\\Admin\\_UsersTable.cshtml",
+              "RelativeToolTip": "AichatBot3\\Views\\Admin\\_UsersTable.cshtml",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAACgAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T13:01:19.665Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TwoFactorController.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Controllers\\TwoFactorController.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\Controllers\\TwoFactorController.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Controllers\\TwoFactorController.cs",
+              "RelativeToolTip": "AichatBot3\\Controllers\\TwoFactorController.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAADoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T03:37:24.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Enable2FAViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\ViewModels\\Enable2FAViewModel.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\ViewModels\\Enable2FAViewModel.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\ViewModels\\Enable2FAViewModel.cs",
+              "RelativeToolTip": "AichatBot3\\ViewModels\\Enable2FAViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T03:47:58.635Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AccountViewModels.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\ViewModels\\AccountViewModels.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\ViewModels\\AccountViewModels.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\ViewModels\\AccountViewModels.cs",
+              "RelativeToolTip": "AichatBot3\\ViewModels\\AccountViewModels.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAiwDAAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T12:46:31.853Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "AichatBot3\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "AichatBot3\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-26T08:30:33.621Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\DomainModels\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\DomainModels\\ApplicationUser.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\DomainModels\\ApplicationUser.cs",
+              "RelativeToolTip": "AichatBot3\\DomainModels\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T07:02:36.954Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "AichatBot3\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T23:16:39.555Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DataSeeder.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Data\\DataSeeder.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\Data\\DataSeeder.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Data\\DataSeeder.cs",
+              "RelativeToolTip": "AichatBot3\\Data\\DataSeeder.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAQwDoAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T18:39:25.688Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ProfileManageController.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Controllers\\ProfileManageController.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\Controllers\\ProfileManageController.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Controllers\\ProfileManageController.cs",
+              "RelativeToolTip": "AichatBot3\\Controllers\\ProfileManageController.cs",
+              "ViewState": "AgIAANEAAAAAAAAAAAAAwO8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T19:45:11.408Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "AichatBot3\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAoCAAAAAAAAAAAQwCkCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T13:10:55.928Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "SmsSender.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Services\\SmsSender.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\Services\\SmsSender.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Services\\SmsSender.cs",
+              "RelativeToolTip": "AichatBot3\\Services\\SmsSender.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T03:45:50.227Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ISmsSender.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Services\\ISmsSender.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\Services\\ISmsSender.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Services\\ISmsSender.cs",
+              "RelativeToolTip": "AichatBot3\\Services\\ISmsSender.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T03:43:42.782Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "EmailSender.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Services\\EmailSender.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\Services\\EmailSender.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Services\\EmailSender.cs",
+              "RelativeToolTip": "AichatBot3\\Services\\EmailSender.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T03:40:54.078Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Microsoft.Common.CurrentVersion.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ViewState": "AgIAAOIUAAAAAAAAAAAkwPMUAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-05-30T22:27:45.999Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "UserWithRolesViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\ViewModels\\UserWithRolesViewModel.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\ViewModels\\UserWithRolesViewModel.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\ViewModels\\UserWithRolesViewModel.cs",
+              "RelativeToolTip": "AichatBot3\\ViewModels\\UserWithRolesViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T13:05:39.731Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ExternalLogin.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Areas\\Identity\\Pages\\Account\\ExternalLogin.cshtml.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\Areas\\Identity\\Pages\\Account\\ExternalLogin.cshtml.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Areas\\Identity\\Pages\\Account\\ExternalLogin.cshtml.cs",
+              "RelativeToolTip": "AichatBot3\\Areas\\Identity\\Pages\\Account\\ExternalLogin.cshtml.cs",
+              "ViewState": "AgIAAMEAAAAAAAAAAAAQwOAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T06:59:39.396Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "AichatBot3\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "AichatBot3\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T11:28:50.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "LoginWithAuthenticator.cshtml",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Views\\TwoFactor\\LoginWithAuthenticator.cshtml",
+              "RelativeDocumentMoniker": "AichatBot3\\Views\\TwoFactor\\LoginWithAuthenticator.cshtml",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Views\\TwoFactor\\LoginWithAuthenticator.cshtml",
+              "RelativeToolTip": "AichatBot3\\Views\\TwoFactor\\LoginWithAuthenticator.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-22T13:33:13.935Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "LoginWith2faViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\ViewModels\\LoginWith2faViewModel.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\ViewModels\\LoginWith2faViewModel.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\ViewModels\\LoginWith2faViewModel.cs",
+              "RelativeToolTip": "AichatBot3\\ViewModels\\LoginWith2faViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T03:52:51.337Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ManageProfileViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\ViewModels\\ManageProfileViewModel.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\ViewModels\\ManageProfileViewModel.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\ViewModels\\ManageProfileViewModel.cs",
+              "RelativeToolTip": "AichatBot3\\ViewModels\\ManageProfileViewModel.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAswAkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T19:19:23.805Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "SetupAuthenticatorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\ViewModels\\SetupAuthenticatorViewModel.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\ViewModels\\SetupAuthenticatorViewModel.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\ViewModels\\SetupAuthenticatorViewModel.cs",
+              "RelativeToolTip": "AichatBot3\\ViewModels\\SetupAuthenticatorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T14:15:34.155Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "EnableAuthenticatorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\ViewModels\\EnableAuthenticatorViewModel.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\ViewModels\\EnableAuthenticatorViewModel.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\ViewModels\\EnableAuthenticatorViewModel.cs",
+              "RelativeToolTip": "AichatBot3\\ViewModels\\EnableAuthenticatorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T08:05:36.391Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "VerifyCodeViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\ViewModels\\VerifyCodeViewModel.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\ViewModels\\VerifyCodeViewModel.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\ViewModels\\VerifyCodeViewModel.cs",
+              "RelativeToolTip": "AichatBot3\\ViewModels\\VerifyCodeViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T16:46:13.689Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Manage2FAViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\ViewModels\\Manage2FAViewModel.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\ViewModels\\Manage2FAViewModel.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\ViewModels\\Manage2FAViewModel.cs",
+              "RelativeToolTip": "AichatBot3\\ViewModels\\Manage2FAViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T12:04:00.311Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "20250522121600_TwoFactorSecretFieldUpdate2.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Migrations\\20250522121600_TwoFactorSecretFieldUpdate2.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\Migrations\\20250522121600_TwoFactorSecretFieldUpdate2.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Migrations\\20250522121600_TwoFactorSecretFieldUpdate2.cs",
+              "RelativeToolTip": "AichatBot3\\Migrations\\20250522121600_TwoFactorSecretFieldUpdate2.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T12:16:01.039Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "20250522113356_TwoFactorSecretFieldUpdate.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Migrations\\20250522113356_TwoFactorSecretFieldUpdate.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\Migrations\\20250522113356_TwoFactorSecretFieldUpdate.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Migrations\\20250522113356_TwoFactorSecretFieldUpdate.cs",
+              "RelativeToolTip": "AichatBot3\\Migrations\\20250522113356_TwoFactorSecretFieldUpdate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T11:33:56.982Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "20250522095449_TwoFactorSecretField.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Migrations\\20250522095449_TwoFactorSecretField.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\Migrations\\20250522095449_TwoFactorSecretField.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Migrations\\20250522095449_TwoFactorSecretField.cs",
+              "RelativeToolTip": "AichatBot3\\Migrations\\20250522095449_TwoFactorSecretField.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T09:54:50.098Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "LoginWith2fa.cshtml",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Areas\\Identity\\Pages\\Account\\LoginWith2fa.cshtml",
+              "RelativeDocumentMoniker": "AichatBot3\\Areas\\Identity\\Pages\\Account\\LoginWith2fa.cshtml",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Areas\\Identity\\Pages\\Account\\LoginWith2fa.cshtml",
+              "RelativeToolTip": "AichatBot3\\Areas\\Identity\\Pages\\Account\\LoginWith2fa.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAxwAEAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-21T08:02:29.846Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Login.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeToolTip": "AichatBot3\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAuwHkAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T08:02:29.248Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "20250517105729_initialMigration.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Migrations\\20250517105729_initialMigration.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\Migrations\\20250517105729_initialMigration.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Migrations\\20250517105729_initialMigration.cs",
+              "RelativeToolTip": "AichatBot3\\Migrations\\20250517105729_initialMigration.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T10:57:29.256Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "EnableAuthenticator.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Areas\\Identity\\Pages\\Account\\Manage\\EnableAuthenticator.cshtml.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\Areas\\Identity\\Pages\\Account\\Manage\\EnableAuthenticator.cshtml.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Areas\\Identity\\Pages\\Account\\Manage\\EnableAuthenticator.cshtml.cs",
+              "RelativeToolTip": "AichatBot3\\Areas\\Identity\\Pages\\Account\\Manage\\EnableAuthenticator.cshtml.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAwFwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T10:56:42.877Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "ConfirmEmail.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Areas\\Identity\\Pages\\Account\\ConfirmEmail.cshtml.cs",
+              "RelativeDocumentMoniker": "AichatBot3\\Areas\\Identity\\Pages\\Account\\ConfirmEmail.cshtml.cs",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Areas\\Identity\\Pages\\Account\\ConfirmEmail.cshtml.cs",
+              "RelativeToolTip": "AichatBot3\\Areas\\Identity\\Pages\\Account\\ConfirmEmail.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAMBdwBIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T22:03:02.473Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "AichatBot3\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "AichatBot3\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAxwBQAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-16T17:53:31.692Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "RegisterConfirmation.cshtml",
+              "DocumentMoniker": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
+              "RelativeDocumentMoniker": "AichatBot3\\Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
+              "ToolTip": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
+              "RelativeToolTip": "AichatBot3\\Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-09T04:12:07.337Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

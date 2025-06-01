@@ -1,0 +1,74 @@
+﻿@model AichatBot3.ViewModels.EditUserViewModel
+
+@{
+    ViewData["Title"] = "Edit User";
+    // Optional: Layout = "_AdminLayout"; // If you have a specific admin layout
+}
+
+<h2>Edit User: @Model.UserName</h2>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="EditUser" method="post">
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            @* Hidden field for User ID *@
+            <input type="hidden" asp-for="Id" />
+
+            <div class="mb-3">
+                <label asp-for="UserName" class="form-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3 form-check">
+                <input type="checkbox" asp-for="EmailConfirmed" class="form-check-input" />
+                <label asp-for="EmailConfirmed" class="form-check-label"></label>
+            </div>
+
+            <hr />
+            <h4>Roles</h4>
+            <div class="mb-3">
+                 @if (Model.AllRoles != null && Model.AllRoles.Any())
+                 {
+                     @foreach (var role in Model.AllRoles)
+                     {
+                         <div class="form-check">
+                             <input type="checkbox"
+                                    name="SelectedRoles" @* Must match ViewModel property name *@
+                                    value="@role.Value"
+                                    class="form-check-input"
+                                    id="role-@role.Value"
+                                    @(Model.SelectedRoles.Contains(role.Value) ? "checked=\"checked\"" : "") />
+                             <label class="form-check-label" for="role-@role.Value">@role.Text</label>
+                         </div>
+                     }
+                     <span asp-validation-for="SelectedRoles" class="text-danger"></span>
+                 }
+                 else
+                 {
+                     <p>No roles available.</p>
+                 }
+            </div>
+
+            <hr />
+
+            <div class="form-group mt-3">
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+                <a asp-action="Users" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

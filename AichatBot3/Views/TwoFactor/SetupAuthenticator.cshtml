@@ -1,0 +1,12 @@
+﻿    @{
+        ViewData["Title"] = "Setup Google Authenticator";
+    }
+
+    <div class="justify-content-center text-center">
+        <h2>Google Authenticator Setup</h2>
+
+        <p>Scan this QR Code with your Google Authenticator app:</p>
+        <img src="@ViewBag.QrCodeImage" alt="QR Code" width="250" height="250" />
+
+        <p>Or enter the secret key manually: <strong>@ViewBag.SecretKey</strong></p>
+    </div>

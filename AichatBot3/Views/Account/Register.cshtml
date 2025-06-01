@@ -1,0 +1,129 @@
+@model AichatBot3.ViewModels.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+    var returnUrl = ViewData["ReturnUrl"] as string ?? "/";
+}
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f0f2f5, #c9d6ff);
+        }
+
+        .auth-card {
+            background: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-floating input:focus {
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+        }
+
+        .form-icon {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            color: #6c757d;
+        }
+
+        .form-floating input {
+            padding-left: 2.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #2c2e80, #5c5eaa);
+            border: none;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+            .btn-primary:hover {
+                background: linear-gradient(90deg, #1f2166, #4b4d98);
+                color: #fff;
+            }
+
+
+        .card-header {
+            background: #4e54c8;
+            color: white;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+            text-align: center;
+            padding: 1.5rem;
+        }
+    </style>
+</head>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card auth-card">
+                <div class="card-header">
+                    <h3>Create Your Account</h3>
+                    <p class="mb-0">Join us and explore AI-powered features</p>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <input type="hidden" name="returnUrl" value="@returnUrl" />
+                        <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                        <div class="position-relative mb-3">
+                            <i class="bi bi-person form-icon"></i>
+                            <div class="form-floating">
+                                <input asp-for="UserName" class="form-control" placeholder="Username" />
+                                <label asp-for="UserName"></label>
+                            </div>
+                            <span asp-validation-for="UserName" class="text-danger"></span>
+                        </div>
+
+                        <div class="position-relative mb-3">
+                            <i class="bi bi-envelope form-icon"></i>
+                            <div class="form-floating">
+                                <input asp-for="Email" type="email" class="form-control" placeholder="Email" />
+                                <label asp-for="Email"></label>
+                            </div>
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="position-relative mb-3">
+                            <i class="bi bi-lock form-icon"></i>
+                            <div class="form-floating">
+                                <input asp-for="Password" type="password" class="form-control" placeholder="Password" />
+                                <label asp-for="Password"></label>
+                            </div>
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="position-relative mb-4">
+                            <i class="bi bi-shield-lock form-icon"></i>
+                            <div class="form-floating">
+                                <input asp-for="ConfirmPassword" type="password" class="form-control" placeholder="Confirm Password" />
+                                <label asp-for="ConfirmPassword"></label>
+                            </div>
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid mb-3">
+                            <button type="submit" class="btn btn-primary py-2">Register</button>
+                        </div>
+
+                        <p class="text-center">
+                            Already have an account?
+                            <a asp-action="Login" asp-route-returnUrl="@returnUrl" class="text-decoration-none">Log in</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

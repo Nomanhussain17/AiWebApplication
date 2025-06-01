@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Registration Successful";
+}
+
+@if (TempData["Success"] != null)
+{
+    <h2>Email Verified Successfully</h2>
+    <p class="alert alert-success">@TempData["Success"]</p>
+}
+else
+{
+    <h2>Verify your Email</h2>
+    <p>We have sent you an email to confirm your account. Please check your inbox.</p>
+}
+
+

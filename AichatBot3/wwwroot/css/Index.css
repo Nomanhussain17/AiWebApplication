@@ -1,0 +1,1227 @@
+﻿/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    /* Light Mode Colors */
+    --primary-light: #6c63ff;
+    --secondary-light: #ff6584;
+    --dark-light: #2a2a2a; /* Text color in light mode */
+    --light-light: #f9f9f9; /* Background in light mode */
+    --surface-light: white; /* Card/container backgrounds */
+    --border-light: #eee;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --gradient-bg-light: linear-gradient(135deg, #6c63ff, #3b82f6);
+    /* Dark Mode Colors */
+    --primary-dark: #7b74ff; /* Slightly adjusted primary */
+    --secondary-dark: #ff7a96; /* Slightly adjusted secondary */
+    --dark-dark: #1a1a1a; /* Background in dark mode */
+    --light-dark: #f0f0f0; /* Text color in dark mode */
+    --surface-dark: #2c2c2c; /* Card/container backgrounds */
+    --border-dark: #444;
+    --shadow-dark: rgba(255, 255, 255, 0.1);
+    --gradient-bg-dark: linear-gradient(135deg, #7b74ff, #4a8eff); /* Adjusted gradient */
+    /* Default Theme (Light) - These will be overridden by .dark-mode */
+    --primary: var(--primary-light);
+    --secondary: var(--secondary-light);
+    --text-color: var(--dark-light);
+    --bg-color: var(--light-light);
+    --surface-color: var(--surface-light);
+    --border-color: var(--border-light);
+    --shadow-color: var(--shadow-light);
+    --gradient-bg: var(--gradient-bg-light);
+    /* Transition speed */
+    --theme-transition-duration: 0.3s;
+}
+
+/* Apply dark mode variables when .dark-mode class is present */
+body.dark-mode {
+    --primary: var(--primary-dark);
+    --secondary: var(--secondary-dark);
+    --text-color: var(--light-dark);
+    --bg-color: var(--dark-dark);
+    --surface-color: var(--surface-dark);
+    --border-color: var(--border-dark);
+    --shadow-color: var(--shadow-dark);
+    --gradient-bg: var(--gradient-bg-dark);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    transition: background-color var(--theme-transition-duration) ease, color var(--theme-transition-duration) ease; /* Smooth transition */
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--text-color); /* Use variable */
+    transition: color var(--theme-transition-duration) ease;
+}
+
+h1 {
+    font-size: 3.5rem;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Keep transparent for gradient */
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--primary); /* Use variable */
+}
+
+p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: var(--text-color); /* Use variable */
+    transition: color var(--theme-transition-duration) ease;
+}
+
+/* Layout */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 5rem 0;
+    transition: background-color var(--theme-transition-duration) ease;
+}
+
+/* Add transition to sections that change background */
+.features, .image-generator, .pricing {
+    background-color: var(--surface-color);
+}
+
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    /* Use rgba for background to allow slight transparency, adapt based on theme */
+    background-color: rgba(from var(--surface-color) r g b / 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px var(--shadow-color);
+    transition: all var(--theme-transition-duration) ease, padding 0.3s ease; /* Added padding transition */
+}
+
+.header-scrolled {
+    padding: 0.5rem 0;
+    background-color: rgba(from var(--surface-color) r g b / 0.98);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+    .logo span {
+        color: var(--secondary);
+    }
+
+.logo-icon {
+    margin-right: 0.5rem;
+    font-size: 2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+nav a:not(.no-underline) {
+    text-decoration: none;
+    color: var(--text-color); /* Use variable */
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+    nav a:not(.no-underline):hover {
+        color: gold;
+    }
+
+nav a:not(.no-underline)::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: gold;
+    transition: width 0.3s ease;
+}
+
+nav a:not(.no-underline):hover::after {
+    width: 100%;
+}
+
+/* Use specific classes for login/logout links if needed for theme */
+nav .nav-link {
+    color: var(--text-color) !important; /* Important might be needed due to Bootstrap styles */
+}
+
+    nav .nav-link b {
+        color: var(--text-color);
+    }
+
+nav .form-inline button b {
+    color: var(--text-color);
+}
+
+nav .nav-link[style*="color:#0d6efd"] b { /* Target the "Hello User" specifically if needed */
+    color: var(--primary);
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: var(--gradient-bg);
+    color: white; /* Keep white for primary buttons */
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(from var(--primary) r g b / 0.3);
+}
+
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(from var(--primary) r g b / 0.4);
+    }
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+    .btn-outline:hover {
+        background: var(--primary);
+        color: white;
+    }
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color); /* Use variable */
+    transition: color var(--theme-transition-duration) ease;
+}
+
+/* --- Theme Toggle Button Styles --- */
+.theme-toggle-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 1.5rem; /* Adjust size as needed */
+    line-height: 1;
+    position: relative;
+    width: 40px; /* Fixed width */
+    height: 40px; /* Fixed height */
+    overflow: hidden; /* Hide icons moving out */
+}
+
+    .theme-toggle-button span {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+
+    .theme-toggle-button .sun-icon {
+        color: #f39c12; /* Sun color */
+        transform: translate(-50%, -150%); /* Start hidden above */
+        opacity: 0;
+    }
+
+    .theme-toggle-button .moon-icon {
+        color: #f1c40f; /* Moon color */
+        /* Starts visible */
+    }
+
+/* Dark mode toggle states */
+body.dark-mode .theme-toggle-button .sun-icon {
+    transform: translate(-50%, -50%); /* Move into view */
+    opacity: 1;
+}
+
+body.dark-mode .theme-toggle-button .moon-icon {
+    transform: translate(-50%, 150%); /* Move out below */
+    opacity: 0;
+}
+/* --- End Theme Toggle Button Styles --- */
+
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 5rem;
+}
+
+.hero-content {
+    grid-column: span 6;
+    animation: fadeInLeft 1s ease;
+}
+
+.hero-image {
+    grid-column: span 6;
+    position: relative;
+}
+
+.hero-img {
+    width: 100%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.hero-shape {
+    position: absolute;
+    z-index: -1;
+}
+
+.shape-1 {
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: var(--secondary);
+    opacity: 0.1;
+    border-radius: 50%;
+    animation: pulse 8s infinite;
+}
+
+.shape-2 {
+    bottom: -150px;
+    left: -150px;
+    width: 400px;
+    height: 400px;
+    background: var(--primary);
+    opacity: 0.1;
+    border-radius: 50%;
+    animation: pulse 12s infinite;
+}
+
+/* Features Section */
+/* .features already handled above with section transition */
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+    .section-title h2 {
+        display: inline-block;
+        position: relative;
+    }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--gradient-bg);
+        }
+
+.feature-card {
+    background: var(--surface-color); /* Use variable */
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px var(--shadow-color); /* Use variable */
+    transition: all 0.3s ease, background-color var(--theme-transition-duration) ease, box-shadow var(--theme-transition-duration) ease;
+    grid-column: span 4;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(from var(--primary) r g b / 0.1);
+    }
+
+    .feature-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: linear-gradient(135deg, rgba(from var(--primary) r g b / 0.1), rgba(59, 130, 246, 0.1));
+        z-index: -1;
+        transition: height 0.5s ease;
+    }
+
+    .feature-card:hover::before {
+        height: 100%;
+    }
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-color); /* Use background color of body */
+    border-radius: 50%;
+    color: var(--primary);
+    font-size: 2rem;
+    transition: all 0.3s ease, background-color var(--theme-transition-duration) ease, color var(--theme-transition-duration) ease;
+}
+
+.feature-card:hover .feature-icon {
+    background: var(--primary);
+    color: white;
+    transform: rotateY(360deg);
+}
+
+
+/* Chatbot Section */
+.chatbot {
+    position: relative;
+    overflow: hidden;
+}
+
+.chatbot-demo {
+    grid-column: span 6;
+    position: relative;
+}
+
+.chatbot-content {
+    grid-column: span 6;
+    animation: fadeInRight 1s ease;
+}
+
+.chat-container {
+    background: var(--surface-color); /* Use variable */
+    border-radius: 20px;
+    box-shadow: 0 20px 50px var(--shadow-color); /* Use variable */
+    overflow: hidden;
+    height: 500px;
+    width: 100%;
+    position: relative;
+    animation: fadeIn 1s ease;
+    transition: background-color var(--theme-transition-duration) ease, box-shadow var(--theme-transition-duration) ease;
+}
+
+.chat-header {
+    background: var(--gradient-bg);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    transition: background var(--theme-transition-duration) ease;
+}
+
+    .chat-header img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 1rem;
+    }
+
+    .chat-header h3 {
+        color: white;
+        margin-bottom: 0.2rem;
+    }
+    /* Ensure header text is white */
+    .chat-header p {
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 0;
+    }
+/* Ensure header text is white */
+.chat-messages {
+    padding: 1rem;
+    height: 380px;
+    overflow-y: auto;
+}
+
+.message {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+    .message.user {
+        align-items: flex-end;
+    }
+
+    .message.bot {
+        align-items: flex-start;
+    }
+
+.message-content {
+    padding: 0.8rem 1rem;
+    border-radius: 20px;
+    max-width: 80%;
+    transition: background-color var(--theme-transition-duration) ease, color var(--theme-transition-duration) ease;
+}
+
+.user .message-content {
+    background: var(--bg-color); /* Use body bg */
+    color: var(--text-color); /* Use body text */
+}
+
+.bot .message-content {
+    background: var(--primary);
+    color: white;
+}
+
+.chat-input {
+    display: flex;
+    padding: 1rem;
+    border-top: 1px solid var(--border-color); /* Use variable */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: var(--surface-color); /* Use variable */
+    transition: background-color var(--theme-transition-duration) ease, border-color var(--theme-transition-duration) ease;
+}
+
+    .chat-input input {
+        flex: 1;
+        padding: 0.8rem 1rem;
+        border: none;
+        border-radius: 50px;
+        background: var(--bg-color); /* Use variable */
+        color: var(--text-color); /* Use variable */
+        outline: none;
+        transition: background-color var(--theme-transition-duration) ease, color var(--theme-transition-duration) ease;
+    }
+
+    .chat-input button {
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        margin-left: 0.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+        .chat-input button:hover {
+            background: var(--secondary);
+            transform: scale(1.1);
+        }
+
+
+/* Image Generator Section */
+/* .image-generator handled above */
+.generator-content {
+    grid-column: span 6;
+    animation: fadeInLeft 1s ease;
+}
+
+.generator-demo {
+    grid-column: span 6;
+    position: relative;
+}
+
+.generator-container {
+    background: var(--surface-color); /* Use variable */
+    border-radius: 20px;
+    box-shadow: 0 20px 50px var(--shadow-color); /* Use variable */
+    overflow: hidden;
+    padding: 2rem;
+    animation: fadeIn 1s ease;
+    transition: background-color var(--theme-transition-duration) ease, box-shadow var(--theme-transition-duration) ease;
+}
+
+.generator-header {
+    margin-bottom: 1.5rem;
+}
+
+.prompt-input {
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+    .prompt-input input {
+        flex: 1;
+        padding: 1rem;
+        border: 1px solid var(--border-color); /* Use variable */
+        border-radius: 10px;
+        outline: none;
+        background: var(--bg-color); /* Use variable */
+        color: var(--text-color); /* Use variable */
+        transition: all 0.3s ease, background-color var(--theme-transition-duration) ease, color var(--theme-transition-duration) ease, border-color var(--theme-transition-duration) ease;
+    }
+
+        .prompt-input input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(from var(--primary) r g b / 0.2);
+        }
+
+.generator-options {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.option-item {
+    padding: 0.5rem 1rem;
+    background: var(--bg-color); /* Use variable */
+    color: var(--text-color); /* Use variable */
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease, background-color var(--theme-transition-duration) ease, color var(--theme-transition-duration) ease;
+}
+
+    .option-item:hover, .option-item.active {
+        background: var(--primary);
+        color: white;
+    }
+
+.generated-image {
+    width: 100%;
+    height: 300px;
+    background: var(--bg-color); /* Use variable */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    transition: background-color var(--theme-transition-duration) ease;
+}
+
+    .generated-image img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+.image-placeholder {
+    color: #aaa;
+    text-align: center;
+    transition: color var(--theme-transition-duration) ease;
+}
+
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Use rgba for background */
+    background: rgba(from var(--surface-color) r g b / 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, background-color var(--theme-transition-duration) ease;
+}
+
+    .loading-overlay.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(from var(--primary) r g b / 0.3);
+    border-radius: 50%;
+    border-top-color: var(--primary);
+    animation: spin 1s linear infinite;
+}
+
+
+/* Testimonials Section */
+.testimonials {
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-container {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.testimonial-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.testimonial-card {
+    min-width: 100%;
+    padding: 2rem;
+    background: var(--surface-color); /* Use variable */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow-color); /* Use variable */
+    margin: 0 1rem;
+    transition: all 0.3s ease, background-color var(--theme-transition-duration) ease, box-shadow var(--theme-transition-duration) ease;
+}
+
+.testimonial-content {
+    position: relative;
+    padding: 1.5rem;
+    background: var(--bg-color); /* Use variable */
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    transition: background-color var(--theme-transition-duration) ease;
+}
+
+    .testimonial-content::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 30px;
+        width: 20px;
+        height: 20px;
+        background: var(--bg-color); /* Use variable */
+        transform: rotate(45deg);
+        transition: background-color var(--theme-transition-duration) ease;
+    }
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.author-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1rem;
+}
+
+    .author-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.author-info h4 {
+    margin-bottom: 0.2rem;
+}
+
+.author-info p {
+    color: #777;
+    margin: 0;
+    transition: color var(--theme-transition-duration) ease;
+}
+/* Secondary text */
+body.dark-mode .author-info p {
+    color: #bbb;
+}
+/* Lighter secondary text in dark mode */
+
+.testimonial-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.nav-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--border-color); /* Use border color */
+    cursor: pointer;
+    transition: all 0.3s ease, background-color var(--theme-transition-duration) ease;
+}
+
+    .nav-dot.active {
+        background: var(--primary);
+        transform: scale(1.2);
+    }
+
+
+/* Pricing Section */
+/* .pricing handled above */
+.pricing-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.pricing-card {
+    background: var(--surface-color); /* Use variable */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow-color); /* Use variable */
+    padding: 3rem 2rem;
+    text-align: center;
+    transition: all 0.3s ease, background-color var(--theme-transition-duration) ease, box-shadow var(--theme-transition-duration) ease, border-color var(--theme-transition-duration) ease;
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+}
+
+    .pricing-card.popular {
+        transform: scale(1.05);
+        box-shadow: 0 20px 50px rgba(from var(--primary) r g b / 0.1);
+        border: 2px solid var(--primary);
+    }
+
+.popular-badge {
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    background: var(--primary);
+    color: white;
+    padding: 0.5rem 2rem;
+    transform: rotate(45deg);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.pricing-header {
+    margin-bottom: 2rem;
+}
+
+.pricing-name {
+    font-size: 1.5rem;
+    color: var(--text-color); /* Use variable */
+    margin-bottom: 0.5rem;
+}
+
+.pricing-price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+    .pricing-price span {
+        font-size: 1rem;
+        color: #777;
+        font-weight: 400;
+        transition: color var(--theme-transition-duration) ease;
+    }
+
+body.dark-mode .pricing-price span {
+    color: #bbb;
+}
+/* Lighter secondary text */
+.pricing-features {
+    margin-bottom: 2rem;
+}
+
+.pricing-feature {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color); /* Use variable */
+    transition: border-color var(--theme-transition-duration) ease;
+}
+
+    .pricing-feature:last-child {
+        border-bottom: none;
+    }
+
+
+/* CTA Section */
+.cta {
+    background: var(--gradient-bg); /* Use variable */
+    color: white; /* Keep text white */
+    text-align: center;
+    padding: 5rem 0;
+    transition: background var(--theme-transition-duration) ease;
+}
+
+    .cta h2 {
+        color: white;
+        margin-bottom: 1.5rem;
+    }
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-white {
+    background: white;
+    color: var(--primary);
+}
+    /* Use primary color for text */
+    .btn-white:hover {
+        background: rgba(255, 255, 255, 0.9);
+    }
+
+.btn-transparent {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+    .btn-transparent:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+
+/* Footer */
+footer {
+    background: var(--dark-dark); /* Use dark bg color for footer always? Or var(--surface-color)? Let's try dark fixed */
+    color: var(--light-dark); /* Use light text color */
+    padding: 5rem 0 2rem;
+    transition: background-color var(--theme-transition-duration) ease, color var(--theme-transition-duration) ease;
+}
+/* If footer should also change, replace above with:
+footer {
+    background: var(--surface-color);
+    color: var(--text-color);
+    padding: 5rem 0 2rem;
+    transition: background-color var(--theme-transition-duration) ease, color var(--theme-transition-duration) ease;
+} */
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-logo {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+    .footer-logo span {
+        color: var(--secondary);
+    }
+/* Use theme secondary */
+.footer-about p {
+    margin-bottom: 1.5rem;
+    color: #aaa;
+}
+/* Use fixed grey or var(--text-color)? */
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+    .social-link:hover {
+        background: var(--primary);
+        transform: translateY(-3px);
+    }
+
+.footer-heading {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    color: white;
+}
+    /* Ensure heading is white */
+    .footer-heading::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background: var(--primary);
+    }
+
+.footer-links {
+    list-style: none;
+    padding-left: 0; /* Remove default padding */
+}
+
+    .footer-links li {
+        margin-bottom: 0.8rem;
+    }
+
+    .footer-links a {
+        color: #aaa;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+.footer-contact-item {
+    display: flex;
+    margin-bottom: 1rem;
+    color: #aaa;
+}
+
+.contact-icon {
+    margin-right: 1rem;
+    color: var(--primary);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+/* Animations (Keep existing) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.2;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.1;
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive Styles (Adjustments for dark mode if needed) */
+@media (max-width: 992px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content, .hero-image, .chatbot-content, .chatbot-demo, .generator-content, .generator-demo {
+        grid-column: span 12;
+    }
+
+    .hero-image, .chatbot-demo, .generator-demo {
+        margin-top: 3rem;
+    }
+
+    .feature-card {
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .feature-card {
+        grid-column: span 12;
+    }
+
+    nav ul {
+        /* Use theme variables for mobile menu */
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--surface-color); /* Use variable */
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 10px 20px var(--shadow-color); /* Use variable */
+        transition: background-color var(--theme-transition-duration) ease, box-shadow var(--theme-transition-duration) ease;
+    }
+
+        nav ul.active {
+            display: flex;
+        }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .pricing-card {
+        min-width: 100%;
+    }
+
+        .pricing-card.popular {
+            transform: scale(1);
+        }
+
+    /* Ensure toggle button is accessible on mobile */
+    .theme-toggle-button {
+        margin-right: 0.5rem;
+    }
+
+    header .container {
+        padding: 0.8rem 1rem; /* Adjust padding if needed */
+    }
+}
+
+/* Dark Mode Image Adjustment for Hero */
+body.dark-mode .hero-image .hero-img {
+    filter: invert(0.9) /* brightness(0.9) contrast(1.1) */; /* Inverts colors: white becomes black, black becomes white */
+    /* You can experiment with other filters like brightness/contrast if invert looks odd */
+    transition: filter var(--theme-transition-duration) ease; /* Optional: smooth transition */
+}
+
+/* Optional: Ensure base style has no filter or the default */
+.hero-image .hero-img {
+    filter: none; /* Or specify default filters if any */
+    transition: filter var(--theme-transition-duration) ease;
+}
+
+
+/* Custom styles for the profile dropdown toggle */
+.profile-dropdown-toggle {
+    border: 1px solid transparent;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    border-radius: var(--bs-border-radius, 0.375rem); /* Use Bootstrap's variable or a pixel value */
+    /* Ensure no underline from nav-link default */
+    text-decoration: none;
+    /* Smooth transition for border and color */
+    transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+
+.Mydropdown:hover {
+    background-color: #3C3D37;
+    border-radius: 5px;
+}

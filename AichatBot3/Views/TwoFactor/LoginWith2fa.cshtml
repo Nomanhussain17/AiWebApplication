@@ -1,0 +1,36 @@
+﻿@model LoginWith2faViewModel
+
+@{
+    ViewData["Title"] = "Two-Factor Authentication";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"]</div>
+}
+
+<form asp-action="LoginWith2fa" method="post">
+    <input type="hidden" asp-for="ReturnUrl" />
+    <input type="hidden" asp-for="RememberMe" />
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="TwoFactorCode">Authenticator Code</label>
+        <input asp-for="TwoFactorCode" class="form-control" autocomplete="off" />
+        <span asp-validation-for="TwoFactorCode" class="text-danger"></span>
+    </div>
+
+    <div class="form-group form-check">
+        <input asp-for="RememberMachine" class="form-check-input" />
+        <label asp-for="RememberMachine" class="form-check-label">Remember this machine</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Verify</button>
+</form>
+
+<form asp-action="Resend2FACode" method="post">
+    <button type="submit" class="btn btn-secondary mt-3">Resend Code via Email</button>
+</form>

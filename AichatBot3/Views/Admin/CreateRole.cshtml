@@ -1,0 +1,30 @@
+﻿@using AichatBot3.ViewModels
+@model CreateRoleViewModel
+@{
+    ViewData["Title"] = "Create Role";
+}
+
+<h2>Create New Role</h2>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateRole" method="post">
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="RoleName" class="form-label"></label>
+                <input asp-for="RoleName" class="form-control" autofocus />
+                <span asp-validation-for="RoleName" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Create Role</button>
+            <a asp-action="ListRoles" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,712 @@
+﻿@using AichatBot3.ViewModels
+@model ManageProfileViewModel
+@{
+    ViewData["Title"] = "Profile Management";
+    var defaultAvatar = "/images/profilepics/default-avatar.png";
+    var profilePicUrl = string.IsNullOrWhiteSpace(Model.ProfilePictureUrl) ? defaultAvatar : Url.Content(Model.ProfilePictureUrl);
+}
+
+@section Styles {
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --success-color: #059669;
+            --danger-color: #dc2626;
+            --warning-color: #d97706;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-900: #111827;
+        }
+
+        .profile-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .modern-card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            transition: all 0.2s ease;
+        }
+
+            .modern-card:hover {
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            }
+
+        .card-header-modern {
+            background-color: var(--gray-50);
+            border-bottom: 1px solid #e5e7eb;
+            border-radius: 12px 12px 0 0 !important;
+            padding: 1.5rem;
+        }
+
+        .tab-nav {
+            border-bottom: 1px solid #e5e7eb;
+            margin-bottom: 2rem;
+        }
+
+        .tab-button {
+            background: none;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            color: var(--gray-600);
+            font-weight: 500;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+            .tab-button:hover {
+                color: var(--primary-color);
+                background-color: var(--gray-50);
+            }
+
+            .tab-button.active {
+                color: var(--primary-color);
+                border-bottom-color: var(--primary-color);
+                background-color: var(--gray-50);
+            }
+
+        .profile-avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .avatar-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .avatar-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            cursor: pointer;
+        }
+
+        .avatar-container:hover .avatar-overlay {
+            opacity: 1;
+        }
+
+        .btn-modern {
+            border-radius: 8px;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary-modern {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+            .btn-primary-modern:hover {
+                background-color: #1d4ed8;
+                border-color: #1d4ed8;
+            }
+
+        .status-badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .badge-success {
+            background-color: #ecfdf5;
+            color: var(--success-color);
+            border: 1px solid #bbf7d0;
+        }
+
+        .badge-warning {
+            background-color: #fffbeb;
+            color: var(--warning-color);
+            border: 1px solid #fed7aa;
+        }
+
+        .security-alert {
+            background-color: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .danger-zone {
+            background-color: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .form-control-modern {
+            border-radius: 8px;
+            border: 1px solid #d1d5db;
+            padding: 0.75rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+            .form-control-modern:focus {
+                border-color: var(--primary-color);
+                box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+            }
+
+        .tab-content {
+            display: none;
+        }
+
+            .tab-content.active {
+                display: block;
+                animation: fadeIn 0.3s ease;
+            }
+
+        @@keyframes fadeIn {
+            from
+
+        {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        }
+
+        .file-preview {
+            background-color: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Phone Number Field Styles */
+        .country-code-prefix {
+            background-color: #f8f9fa;
+            border-right: none;
+            padding: 0.5rem 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-width: 80px;
+        }
+
+        .flag-icon {
+            width: 20px;
+            height: auto;
+            border-radius: 2px;
+        }
+
+        .country-code {
+            font-weight: 500;
+            color: #495057;
+            font-size: 0.9rem;
+        }
+
+        .form-control-modern.phone-input {
+            border-left: none;
+        }
+
+        .input-group .form-control-modern:not(:last-child) {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .btn-modern.phone-btn {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        /* Remove number input arrows */
+        input[type="tel"]::-webkit-outer-spin-button,
+        input[type="tel"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type="tel"] {
+            -moz-appearance: textfield;
+        }
+    </style>
+}
+
+<div class="profile-container">
+    <!-- Header -->
+    <div class="mb-4">
+        <h1 class="h2 fw-bold text-dark mb-2">Profile Management</h1>
+        <p class="text-muted">Manage your account settings and personal information</p>
+    </div>
+
+    <!-- Status Messages -->
+    @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
+    {
+        <div class="alert alert-success alert-dismissible fade show mb-4" role="alert">
+            <i class="bi bi-check-circle me-2"></i>@Model.StatusMessage
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
+            <i class="bi bi-exclamation-triangle me-2"></i>Please correct the errors below.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <!-- Tab Navigation -->
+    <div class="tab-nav">
+        <button type="button" class="tab-button active" data-tab="account">
+            <i class="bi bi-person"></i> Account
+        </button>
+        <button type="button" class="tab-button" data-tab="security">
+            <i class="bi bi-shield-check"></i> Security
+        </button>
+        <button type="button" class="tab-button" data-tab="privacy">
+            <i class="bi bi-key"></i> Privacy
+        </button>
+    </div>
+
+    <div class="row">
+        <!-- Left Column - Account/Security Details -->
+        <div class="col-lg-8">
+            <!-- Account Tab -->
+            <div id="account-tab" class="tab-content active">
+                <!-- Profile Information Card -->
+                <div class="card modern-card mb-4">
+                    <div class="card-header card-header-modern">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0 d-flex align-items-center">
+                                <i class="bi bi-person me-2"></i> Personal Information
+                            </h5>
+                            <a asp-area="Identity" asp-page="/Account/Manage/EditProfile" class="btn btn-outline-primary btn-sm">
+                                <i class="bi bi-pencil me-1"></i> Edit
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-4">
+                            @if (!string.IsNullOrWhiteSpace(Model.FirstName) || !string.IsNullOrWhiteSpace(Model.LastName))
+                            {
+                                <div class="col-md-6">
+                                    <label class="form-label text-muted small">Full Name</label>
+                                    <p class="h6 text-dark">@Model.FirstName @Model.LastName</p>
+                                </div>
+                            }
+
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small">Username</label>
+                                <p class="h6 text-dark">@@@Model.Username</p>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small d-flex align-items-center">
+                                    <i class="bi bi-envelope me-1"></i> Email Address
+                                </label>
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="text-dark">@Model.Email</span>
+                                    @if (Model.IsEmailConfirmed)
+                                    {
+                                        <span class="status-badge badge-success">
+                                            <i class="bi bi-check-circle me-1"></i> Verified
+                                        </span>
+                                    }
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small d-flex align-items-center">
+                                    <i class="bi bi-shield-check me-2"></i>
+                                    2FA
+                                </label>
+                                <div class="d-flex align-items-center gap-2">
+                                    @if (Model.TwoFactorEnabled)
+                                    {
+                                        <span class="status-badge badge-success">
+                                            <i class="bi bi-check-circle me-1"></i> Enable
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="status-badge badge-warning">
+                                            <i class="bi bi-check-circle me-1"></i> Disable
+                                        </span>
+                                    }
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small d-flex align-items-center">
+                                    <i class="bi bi-telephone me-1"></i> Phone Number
+                                </label>
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="text-dark">@(Model.PhoneNumber ?? "Not added")</span>
+                                    @if (Model.IsPhoneConfirmed)
+                                    {
+                                        <span class="status-badge badge-success">
+                                            <i class="bi bi-check-circle me-1"></i> Verified
+                                        </span>
+                                    }
+                                    else if (!string.IsNullOrEmpty(Model.PhoneNumber))
+                                    {
+                                        <span class="status-badge badge-warning">
+                                            <i class="bi bi-exclamation-circle me-1"></i> Unverified
+                                        </span>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Update Phone Number Card -->
+                <div class="card modern-card">
+                    <div class="card-header card-header-modern">
+                        <h5 class="mb-0">Update Contact Number</h5>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" asp-action="AddPhoneNumber" asp-controller="ProfileManage">
+                            @Html.AntiForgeryToken()
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <div class="input-group">
+                                    <span class="input-group-text country-code-prefix">
+                                        <img src="https://flagcdn.com/w20/pk.png" alt="Pakistan" class="flag-icon">
+                                        <span class="country-code">+92</span>
+                                    </span>
+                                    <input type="tel" class="form-control form-control-modern phone-input" name="phoneDisplay" id="phone"
+                                           placeholder="3141239755" maxlength="10" pattern="[0-9]{10}" required>
+                                    <input type="hidden" name="phone" id="phoneHidden">
+                                    <button type="submit" class="btn btn-primary btn-modern phone-btn">Update</button>
+                                </div>
+                                <div class="form-text">Enter 10-digit number without country code (e.g., 3141239755)</div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security Tab -->
+            <div id="security-tab" class="tab-content">
+                <div class="card modern-card">
+                    <div class="card-header card-header-modern">
+                        <h5 class="mb-0 d-flex align-items-center">
+                            <i class="bi bi-shield-check me-2"></i> Security Overview
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Security Status Alert -->
+                        <div class="security-alert">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <i class="bi bi-shield-check text-primary" style="font-size: 1.5rem;"></i>
+                                </div>
+                                <div>
+                                    <h6 class="text-primary mb-1">Account Security Status</h6>
+                                    <p class="text-primary mb-0 small">
+                                        @if (Model.TwoFactorEnabled && Model.IsEmailConfirmed)
+                                        {
+                                            <text>Your account has strong security measures in place.</text>
+                                        }
+                                        else
+                                        {
+                                            <text>We recommend enabling two-factor authentication for increased security.</text>
+                                        }
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2FA Section -->
+                        <div class="d-flex justify-content-between align-items-center py-3 border-bottom">
+                            <div>
+                                <h6 class="mb-1">Two-Factor Authentication</h6>
+                                <p class="text-muted small mb-0">Adds an extra layer of security to your account</p>
+                            </div>
+                            <div>
+                                @if (Model.TwoFactorEnabled)
+                                {
+                                    <form asp-action="Enable2FA" asp-controller="TwoFactor" method="post" class="d-inline">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="btn btn-outline-danger btn-modern">Disable 2FA</button>
+                                    </form>
+                                }
+                                else
+                                {
+                                    <form asp-action="Enable2FA" asp-controller="TwoFactor" method="post" class="d-inline">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="btn btn-primary btn-modern">Enable 2FA</button>
+                                    </form>
+                                }
+                            </div>
+                        </div>
+
+                        <!-- Authentication Method -->
+                        <div class="py-3 border-bottom">
+                            <h6 class="mb-2">Setup Google Authenticator</h6>
+                            <p class="text-muted small mb-3">Setup Google Authenticator for fast and easy authentication</p>
+
+                            <form asp-action="SetupAuthenticator" asp-controller="TwoFactor" method="get">
+                                <button type="submit" class="btn btn-outline-primary btn-modern">
+                                    <i class="bi bi-google me-2"></i>Setup Google Authenticator
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Password Management -->
+                        <div class="pt-3">
+                            <h6 class="mb-2">Password Management</h6>
+                            <a asp-area="Identity" asp-page="/Account/Manage/ChangePassword" class="btn btn-outline-primary btn-modern w-100">
+                                <i class="bi bi-key me-2"></i>Change Your Password
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Privacy Tab -->
+            <div id="privacy-tab" class="tab-content">
+                <div class="card modern-card border-danger">
+                    <div class="card-header" style="background-color: #fef2f2; border-bottom: 1px solid #fecaca;">
+                        <h5 class="mb-1 text-danger">Account Management</h5>
+                        <p class="text-danger small mb-0">Actions in this section are permanent and cannot be undone.</p>
+                    </div>
+                    <div class="card-body">
+                        <!-- Delete Account -->
+                        <div class="danger-zone mb-4">
+                            <h6 class="text-danger mb-2">Delete Your Account</h6>
+                            <p class="text-danger mb-3 small">
+                                This action permanently removes your account and all associated data. This cannot be recovered.
+                            </p>
+                            <form method="post" asp-action="DeleteAccount" onsubmit="return confirm('Are you sure you want to delete your account? This action cannot be undone.');">
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-danger btn-modern w-100">
+                                    <i class="bi bi-trash me-2"></i>Delete My Account
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Export Data -->
+                        <div class="border rounded p-4" style="background-color: var(--gray-50);">
+                            <h6 class="mb-2">Export Your Data</h6>
+                            <p class="text-muted mb-3 small">
+                                Download a copy of your personal data in a portable format.
+                            </p>
+                            <button type="button" class="btn btn-outline-primary btn-modern w-100">
+                                <i class="bi bi-download me-2"></i>Request Data Export
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column - Profile Picture -->
+        <div class="col-lg-4">
+            <div class="card modern-card sticky-top" style="top: 2rem;">
+                <div class="card-header card-header-modern text-center">
+                    <h5 class="mb-0">Profile Picture</h5>
+                </div>
+                <div class="card-body text-center">
+                    <div class="avatar-container mb-4">
+                        <img src="@profilePicUrl" alt="Profile Picture" class="profile-avatar" id="profilePicturePreview">
+                        <div class="avatar-overlay">
+                            <label for="ProfilePictureFileInput" class="text-white cursor-pointer">
+                                <i class="bi bi-pencil" style="font-size: 2rem;"></i>
+                            </label>
+                        </div>
+                    </div>
+
+                    <form asp-action="UploadProfilePicture" asp-controller="ProfileManage" method="post" enctype="multipart/form-data">
+                        @Html.AntiForgeryToken()
+
+                        <div class="mb-3">
+                            <label for="ProfilePictureFileInput" class="form-label">Upload New Picture</label>
+                            <input asp-for="ProfilePictureFile" type="file" class="form-control form-control-modern"
+                                   accept="image/jpeg,image/png,image/gif" id="ProfilePictureFileInput">
+                            <span asp-validation-for="ProfilePictureFile" class="text-danger small"></span>
+                            <div class="form-text">Max file size: 2MB. Allowed types: JPG, PNG, GIF.</div>
+                        </div>
+
+                        <div id="filePreview" class="file-preview" style="display: none;">
+                            <p class="small text-primary mb-1">
+                                <i class="bi bi-check-circle me-1"></i>
+                                <span id="fileName"></span>
+                            </p>
+                            <p class="small text-primary mb-0">
+                                Size: <span id="fileSize"></span>
+                            </p>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-modern w-100 mt-3" id="uploadButton" disabled>
+                            <i class="bi bi-upload me-2"></i>Upload New Picture
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Tab functionality
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const tabName = this.getAttribute('data-tab');
+
+                    // Update active tab button
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Update active tab content
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    document.getElementById(tabName + '-tab').classList.add('active');
+                });
+            });
+
+                    // Phone number validation
+        const phoneInput = document.getElementById('phone');
+        const phoneHidden = document.getElementById('phoneHidden');
+
+        if (phoneInput) {
+            phoneInput.addEventListener('input', function(e) {
+                // Remove any non-digit characters
+                let value = e.target.value.replace(/\D/g, '');
+
+                // Limit to 10 digits
+                if (value.length > 10) {
+                    value = value.slice(0, 10);
+                }
+
+                e.target.value = value;
+
+                // Update hidden field with +92 prefix
+                phoneHidden.value = value ? '+92' + value : '';
+            });
+
+            // Form validation for phone
+            phoneInput.closest('form').addEventListener('submit', function(e) {
+                const phoneValue = phoneInput.value;
+
+                if (phoneValue.length !== 10) {
+                    e.preventDefault();
+                    alert('Please enter exactly 10 digits for the phone number.');
+                    phoneInput.focus();
+                    return false;
+                }
+
+                if (!/^[0-9]{10}$/.test(phoneValue)) {
+                    e.preventDefault();
+                    alert('Please enter only numbers.');
+                    phoneInput.focus();
+                    return false;
+                }
+
+                // Ensure hidden field has the complete number
+                phoneHidden.value = '+92' + phoneValue;
+            });
+        }
+
+            // Profile picture preview functionality
+            const fileInput = document.getElementById('ProfilePictureFileInput');
+            const imagePreview = document.getElementById('profilePicturePreview');
+            const uploadButton = document.getElementById('uploadButton');
+            const filePreview = document.getElementById('filePreview');
+            const fileName = document.getElementById('fileName');
+            const fileSize = document.getElementById('fileSize');
+            const originalSrc = imagePreview.src;
+
+            if (fileInput && imagePreview) {
+                fileInput.addEventListener('change', function (event) {
+                    const file = event.target.files[0];
+
+                    if (file) {
+                        // Validate file type
+                        if (!file.type.startsWith('image/')) {
+                            alert('Please select a valid image file (JPG, PNG, GIF).');
+                            event.target.value = '';
+                            resetPreview();
+                            return;
+                        }
+
+                        // Validate file size (2MB)
+                        if (file.size > 2 * 1024 * 1024) {
+                            alert('File size must be less than 2MB.');
+                            event.target.value = '';
+                            resetPreview();
+                            return;
+                        }
+
+                        // Show preview
+                        const reader = new FileReader();
+                        reader.onload = function (e) {
+                            imagePreview.src = e.target.result;
+                            uploadButton.disabled = false;
+
+                            // Show file info
+                            fileName.textContent = file.name;
+                            fileSize.textContent = (file.size / 1024 / 1024).toFixed(2) + ' MB';
+                            filePreview.style.display = 'block';
+                        };
+                        reader.readAsDataURL(file);
+                    } else {
+                        resetPreview();
+                    }
+                });
+            }
+
+            function resetPreview() {
+                imagePreview.src = originalSrc;
+                uploadButton.disabled = true;
+                filePreview.style.display = 'none';
+            }
+
+            // Enhanced form validation feedback
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    const submitButton = form.querySelector('button[type="submit"]');
+                    if (submitButton && !submitButton.closest('.phone-form')) {
+                        submitButton.disabled = true;
+                        submitButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Processing...';
+
+                        // Re-enable after 3 seconds to prevent permanent disable on validation errors
+                        setTimeout(() => {
+                            submitButton.disabled = false;
+                            submitButton.innerHTML = submitButton.getAttribute('data-original-text') || submitButton.textContent;
+                        }, 3000);
+                    }
+                });
+            });
+        });
+    </script>
+}

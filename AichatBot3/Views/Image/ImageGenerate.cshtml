@@ -1,0 +1,323 @@
+﻿@{
+    ViewData["Title"] = "AI Image Generator";
+    // Helper function to check for null/empty/whitespace in Razor safely
+    Func<string, bool> IsNullOrWs = System.String.IsNullOrWhiteSpace;
+    // Store ViewBag values in variables for cleaner access in JS below
+    var imageUrl = ViewBag.ImageUrl as string;
+    var generationTime = ViewBag.GenerationTime as string; // Keep as string from controller
+    var errorMessage = ViewBag.Error as string;
+    var selectedModel = ViewBag.SelectedModel as string;
+    var currentPrompt = ViewBag.CurrentPrompt as string; // Assuming you might pass this back
+}
+
+<style>
+    /* Global Styles */
+    body {
+        background-color: #121212;
+        font-family: 'Poppins', sans-serif;
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Main Container */
+    .image-generator-container {
+        max-width: 600px;
+        margin: 50px auto;
+        background: #1e1e1e;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+    }
+
+        .image-generator-container:hover {
+            box-shadow: 0px 6px 20px rgba(255, 255, 255, 0.2);
+        }
+
+    /* Heading */
+    h2 {
+        color: #ffffff;
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    /* Image Display */
+    .image-display {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px dashed #888888;
+        border-radius: 10px;
+        background: #2c2c2c;
+        min-height: 350px;
+        position: relative;
+        padding: 10px;
+        overflow: hidden;
+    }
+
+        .image-display img {
+            max-width: 100%;
+            max-height: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+            display: block;
+        }
+
+            .image-display img:hover {
+                transform: scale(1.02);
+            }
+
+        .image-display .text-muted {
+            margin: auto;
+        }
+
+    /* Loading Animation */
+    .loading-container {
+        display: none; /* Hidden by default */
+        text-align: center;
+        padding: 20px;
+        min-height: 350px;
+        display: flex; /* Use flex for centering */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+        /* Ensure loading is hidden initially by JS too */
+        .loading-container:not([style*="display: block"]):not([style*="display: flex"]) {
+            display: none !important;
+        }
+
+        .loading-container .spinner-border {
+            width: 3rem;
+            height: 3rem;
+            color: #007bff;
+        }
+
+        .loading-container p {
+            margin-top: 10px;
+            color: #ccc;
+        }
+
+    /* Input Fields */
+    .form-control, .form-select {
+        margin-top: 8px;
+        background-color: #2a2a2a;
+        border: 1px solid #444;
+        color: white;
+    }
+
+    .form-select {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23cccccc' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    }
+
+    .form-control::placeholder {
+        color: #bbbbbb;
+    }
+
+    .form-control:focus, .form-select:focus {
+        background-color: #3a3a3a;
+        border-color: #007bff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        color: white;
+    }
+
+    /* Buttons */
+    .btn-generate, .btn-download {
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+        border-radius: 6px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+        margin-top: 15px;
+    }
+
+    .btn-generate {
+        background: linear-gradient(90deg, #007bff, #0056b3);
+        color: white;
+        border: none;
+    }
+
+        .btn-generate:hover {
+            background: linear-gradient(90deg, #0056b3, #003e7c);
+            transform: translateY(-2px);
+        }
+
+    .btn-download {
+        display: none; /* Hidden by default */
+        margin-top: 10px;
+        background: linear-gradient(90deg, #28a745, #1e7d32);
+        border: none;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        line-height: inherit;
+    }
+
+        .btn-download:hover {
+            background: linear-gradient(90deg, #1e7d32, #145c24);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+    /* Error Message */
+    .error-message {
+        color: #ff4d4d;
+        text-align: center;
+        font-weight: bold;
+        margin-top: 15px;
+        padding: 10px;
+        background-color: rgba(255, 77, 77, 0.1);
+        border: 1px solid rgba(255, 77, 77, 0.3);
+        border-radius: 6px;
+    }
+
+    /* Generation Time */
+    #generationTime {
+        display: none; /* Hidden by default */
+        font-size: 16px;
+        color: #ddd;
+        margin-top: 15px;
+    }
+
+    /* Form Label */
+    .form-label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+        color: #ccc;
+        text-align: left;
+    }
+</style>
+
+<div class="image-generator-container">
+    <h2>🎨 AI Image Generator</h2>
+
+    <div class="image-display" id="imageContainer">
+        @if (!IsNullOrWs(imageUrl))
+        {
+            <img id="generatedImage" src="@imageUrl" alt="Generated Image by AI">
+        }
+        else
+        {
+            <p class="text-muted">✨ Your generated image will appear here.</p>
+        }
+    </div>
+
+    <div id="loading" class="loading-container" style="display: none;">
+        <div class="spinner-border" role="status"></div>
+        <p>Generating image... Please wait.</p>
+    </div>
+
+    <p id="generationTime" style="display: none;"><strong>Generation Time:</strong> <span id="timeValue"></span> seconds</p>
+
+    @if (!IsNullOrWs(errorMessage))
+    {
+        <div class="error-message">⚠️ @errorMessage</div>
+    }
+
+    <form asp-action="ImageGenerate" asp-controller="Image" method="post" id="imageForm">
+        <div class="mb-3">
+            <label for="prompt" class="form-label mt-">✍️ Enter Prompt:</label>
+            <textarea class="form-control" id="prompt" name="prompt" rows="3" placeholder="e.g., A cute cat astronaut floating in space, vibrant colors, detailed painting" required>@currentPrompt</textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="model" class="form-label">🖌️ Select Model:</label>
+            <select class="form-select form-control" id="model" name="model">
+                <option value="Model1" selected="@(selectedModel == "Model1")">FLUX.1 Dev (Fast, Experimental)</option>
+                <option value="Model2" selected="@(selectedModel == "Model2")">Stable Diffusion 3.5 Large</option> @* Corrected Text *@
+                <option value="Model3" selected="@(selectedModel == "Model3")">stabilityai/stable-diffusion-xl-base-1.0</option> @* Corrected Default Logic *@
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-generate">🚀 Generate Image</button>
+    </form>
+
+    @* Use a placeholder href initially, JS will set it if image loads *@
+    <a id="downloadBtn" class="btn btn-download" href="#" download="ai-generated-image.png" style="display: none;">⬇️ Download Image</a>
+
+</div>
+
+
+<script>
+    // Helper function
+    function isNullOrWhitespace(value) {
+         return value == null || (typeof value === 'string' && value.trim() === '');
+    }
+
+    // --- Handle Form Submission: Show Loading ---
+    const imageForm = document.getElementById("imageForm");
+    const loadingDiv = document.getElementById("loading");
+    const imageContainerDiv = document.getElementById("imageContainer");
+    const generationTimeDiv = document.getElementById("generationTime");
+    const downloadBtn = document.getElementById("downloadBtn");
+    const errorDiv = document.querySelector(".error-message"); // Select existing error div
+
+    if (imageForm) {
+        imageForm.addEventListener("submit", function () {
+            // Show loading, hide results/errors from previous attempts
+            if(loadingDiv) loadingDiv.style.display = "flex";
+            if(imageContainerDiv) imageContainerDiv.style.display = "none";
+            if(generationTimeDiv) generationTimeDiv.style.display = "none";
+            if(downloadBtn) downloadBtn.style.display = "none";
+            if(errorDiv) errorDiv.style.display = "none";
+        });
+    } else {
+         console.error("Image form ('#imageForm') not found.");
+    }
+
+    // --- Handle Page Load/Reload: Show Results/Time/Download ---
+    document.addEventListener("DOMContentLoaded", function () {
+        const generatedImage = document.getElementById("generatedImage"); // Check if img tag exists
+        const timeValueElement = document.getElementById("timeValue");
+
+        // Get data passed from controller via C# variables rendered into JS
+        const imageUrl = '@Html.Raw(System.Web.HttpUtility.JavaScriptStringEncode(imageUrl ?? ""))';
+        const generationTime = '@Html.Raw(System.Web.HttpUtility.JavaScriptStringEncode(generationTime ?? ""))';
+        const hasError = @(!IsNullOrWs(errorMessage) ? "true" : "false"); // Check if an error message exists
+
+        // Determine if a valid image URL was passed back
+        let imageExists = generatedImage && !isNullOrWhitespace(imageUrl) && imageUrl.startsWith("data:image");
+
+        if (imageExists) {
+            // Image exists - show relevant elements
+            if (generationTimeDiv && timeValueElement && !isNullOrWhitespace(generationTime)) {
+                generationTimeDiv.style.display = "block";
+                timeValueElement.innerText = generationTime;
+            }
+
+            if (downloadBtn) {
+                downloadBtn.href = imageUrl; // Set download link from the variable
+                const promptText = document.getElementById("prompt")?.value?.substring(0, 20).replace(/\s+/g, '_') || "ai";
+                downloadBtn.download = `AichatBot3_${promptText}_${Date.now()}.png`;
+                downloadBtn.style.display = "block";
+            }
+
+            // Ensure image container is visible and loading is hidden
+            if(imageContainerDiv) imageContainerDiv.style.display = "flex";
+            if(loadingDiv) loadingDiv.style.display = "none";
+
+        } else if (!hasError) {
+            // No image AND no error (initial page load or cleared state)
+            if(generationTimeDiv) generationTimeDiv.style.display = "none";
+            if(downloadBtn) downloadBtn.style.display = "none";
+            if(loadingDiv) loadingDiv.style.display = "none";
+            if(imageContainerDiv) imageContainerDiv.style.display = "flex"; // Show placeholder area
+
+        } else {
+             if (generationTimeDiv) generationTimeDiv.style.display = "none";
+             if(downloadBtn) downloadBtn.style.display = "none";
+             if(loadingDiv) loadingDiv.style.display = "none"; // Ensure loading hidden if page loaded with error
+             if(imageContainerDiv) imageContainerDiv.style.display = "flex"; // Show placeholder area even on error
+        }
+    });
+</script>

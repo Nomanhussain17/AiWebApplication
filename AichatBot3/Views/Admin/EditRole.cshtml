@@ -1,0 +1,40 @@
+﻿@using AichatBot3.ViewModels
+@model EditRoleViewModel
+@{
+    ViewData["Title"] = "Edit Role";
+}
+
+<h2>Edit Role</h2>
+<hr />
+
+<div class="alert alert-warning" role="alert">
+    <strong>Warning:</strong> Renaming a role does not automatically update authorization policies or code that might reference the old role name directly. Ensure you update any such references manually after renaming.
+</div>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditRole" method="post">
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="All" class="text-danger"></div> @* Show all errors *@
+
+            @* Hidden field for ID *@
+            <input type="hidden" asp-for="Id" />
+
+            <div class="mb-3">
+                <label asp-for="RoleName" class="form-label"></label>
+                <input asp-for="RoleName" class="form-control" autofocus />
+                <span asp-validation-for="RoleName" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update Role</button>
+            <a asp-action="ListRoles" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

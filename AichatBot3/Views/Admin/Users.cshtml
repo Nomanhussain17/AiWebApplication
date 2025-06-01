@@ -1,0 +1,171 @@
+﻿@using AichatBot3.ViewModels
+@using Microsoft.AspNetCore.Identity
+@model IEnumerable<UserWithRolesViewModel>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["Error"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<input type="text" id="searchBox" class="form-control mb-3" placeholder="Search by username or email..." />
+
+<div id="usersTable">
+</div>
+
+
+<!-- 🔥 Delete Confirmation Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="DeleteConfirmed" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete <strong id="userToDelete"></strong>?
+                    <input type="hidden" name="id" id="deleteUserId" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        // --- Delete Modal Logic ---
+        // Handles setting up the delete confirmation modal when a delete button is clicked
+        var deleteModal = document.getElementById('deleteModal');
+        if (deleteModal) { // Check if modal element exists on the page
+            deleteModal.addEventListener('show.bs.modal', function (event) {
+                // Button that triggered the modal
+                var button = event.relatedTarget;
+                // Extract info from data-* attributes
+                var userId = button.getAttribute('data-user-id');
+                var userName = button.getAttribute('data-user-name');
+
+                // Update the modal's content.
+                var modalUserIdInput = document.getElementById('deleteUserId');
+                var modalUserNameElement = document.getElementById('userToDelete');
+
+                // Ensure modal elements exist before setting values
+                if(modalUserIdInput) modalUserIdInput.value = userId;
+                if(modalUserNameElement) modalUserNameElement.innerText = userName;
+            });
+        } else {
+            console.warn("Delete modal element ('#deleteModal') not found.");
+        }
+
+        // --- Function to Load Users via AJAX (Accepts Term and Page) ---
+        // This function makes the call to your controller's SearchUsers action
+        function loadUsers(term = '', page = 1) {
+            console.log(`Loading users - Term: "${term}", Page: ${page}`); // For debugging
+
+            var usersTableContainer = $('#usersTable'); // The div where the partial view is loaded
+            if (!usersTableContainer.length) {
+                 console.error("Container '#usersTable' not found.");
+                 return; // Exit if the target div doesn't exist
+            }
+
+            // Show a simple loading indicator
+            usersTableContainer.html('<div class="text-center p-4"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>');
+
+            // Perform the AJAX GET request
+            $.get(
+                '/Admin/SearchUsers', // URL of your controller action
+                { term: term, page: page }, // Data to send (search term and page number)
+                function (data) { // Success callback
+                    // Check if the response looks like valid HTML table content
+                    if (typeof data === 'string' && data.indexOf('<table') !== -1) {
+                        usersTableContainer.html(data); // Load the returned partial view HTML
+                    } else if (typeof data === 'string' && data.trim().length === 0) {
+                        // Handle empty valid response (e.g., no users found for search)
+                        usersTableContainer.html('<div class="alert alert-warning text-center">No users found matching your criteria.</div>');
+                    } else {
+                        // Handle unexpected response format (not HTML table)
+                        console.warn("Received unexpected data format from /Admin/SearchUsers:", data);
+                        usersTableContainer.html('<div class="alert alert-warning text-center">Received unexpected data format while loading users.</div>');
+                    }
+                }
+            ).fail(function(jqXHR, textStatus, errorThrown) {
+                 // Handle AJAX errors (e.g., server error, network issue)
+                 console.error("AJAX Error loading users:", textStatus, errorThrown, jqXHR.responseText);
+                 usersTableContainer.html('<div class="alert alert-danger text-center">Error loading user data. Please check console or try again later.</div>');
+            });
+        }
+
+        // --- Document Ready Handler ---
+        // Ensures the DOM is loaded before attaching event handlers
+        $(document).ready(function () {
+            console.log("Document ready. Initializing user table functionality.");
+
+            // Initial load of users when the page first loads (Page 1, no search term)
+            loadUsers();
+
+            // --- Search Box Input Handler (with Debounce) ---
+            var debounceTimer;
+            var searchBox = $('#searchBox');
+             if (searchBox.length) {
+                searchBox.on('input', function () {
+                    clearTimeout(debounceTimer); // Clear previous timer
+                    var searchTerm = $(this).val();
+                    // Debounce: Wait 300ms after user stops typing before sending request
+                    debounceTimer = setTimeout(function() {
+                         console.log(`Search triggered - Term: "${searchTerm}"`);
+                         loadUsers(searchTerm, 1); // Always fetch page 1 when search term changes
+                    }, 300);
+                });
+            } else {
+                 console.warn("Search box element ('#searchBox') not found.");
+            }
+
+
+            // --- AJAX Pagination Click Handler (for Manual Pagination Links) ---
+            // Uses event delegation: listens on '#usersTable' for clicks on matching child elements
+            // This works even when the pagination links are replaced by AJAX calls
+            $('#usersTable').on('click', '.pagination .page-link[data-page]', function (e) {
+                e.preventDefault(); // Stop the link from navigating normally
+
+                var $link = $(this); // The clicked link element
+                var $parentLi = $link.closest('li'); // The parent list item
+
+                // Ignore clicks on disabled links (e.g., Previous on page 1, Next on last page)
+                if ($parentLi.hasClass('disabled') || $parentLi.hasClass('active')) {
+                    return;
+                }
+
+                var page = $link.data('page'); // Get page number from the data-page attribute
+                if (!page) {
+                    console.warn("Clicked pagination link missing valid data-page attribute.");
+                    return; // Ignore if attribute is missing or invalid
+                }
+
+                // Get the current search term directly from the search box input
+                var term = $('#searchBox').val() || '';
+
+                console.log("Manual Paging via AJAX - Term:", term, "Page:", page); // For debugging
+
+                // Load the data for the clicked page, preserving the current search term
+                loadUsers(term, parseInt(page)); // Ensure page is treated as an integer
+            });
+
+        }); // End Document Ready
+    </script>
+}

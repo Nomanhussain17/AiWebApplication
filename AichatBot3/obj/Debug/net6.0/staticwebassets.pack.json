@@ -1,0 +1,317 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\AichatBot3.bundle.scp.css",
+      "PackagePath": "staticwebassets\\AichatBot3.vuqya5yyia.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\Images\\ai-brain-network.jpg",
+      "PackagePath": "staticwebassets\\Images\\ai-brain-network.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\Images\\ai-wireframe-head.jpg",
+      "PackagePath": "staticwebassets\\Images\\ai-wireframe-head.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\Images\\profilepics\\92e78edf-c80f-420b-8cd5-3ac7a27aaca1_photo.jpg",
+      "PackagePath": "staticwebassets\\Images\\profilepics\\92e78edf-c80f-420b-8cd5-3ac7a27aaca1_photo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\Images\\profilepics\\d586e8a9-ee62-4e17-8079-97a06de7e04b_photo.jpg",
+      "PackagePath": "staticwebassets\\Images\\profilepics\\d586e8a9-ee62-4e17-8079-97a06de7e04b_photo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\Images\\profilepics\\d9ff6122-d461-477a-a793-498d73c87cad_photo.jpg",
+      "PackagePath": "staticwebassets\\Images\\profilepics\\d9ff6122-d461-477a-a793-498d73c87cad_photo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\Images\\profilepics\\default-avatar.png",
+      "PackagePath": "staticwebassets\\Images\\profilepics\\default-avatar.png"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\Images\\profilepics\\f5df678a-6618-412d-8b92-df5bbc84f3dc_photo.jpg",
+      "PackagePath": "staticwebassets\\Images\\profilepics\\f5df678a-6618-412d-8b92-df5bbc84f3dc_photo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\Images\\profilepics\\f9f36e65-a3e2-4094-9e4f-392a7caa18f1_photo.jpg",
+      "PackagePath": "staticwebassets\\Images\\profilepics\\f9f36e65-a3e2-4094-9e4f-392a7caa18f1_photo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\css\\ChatBot.css",
+      "PackagePath": "staticwebassets\\css\\ChatBot.css"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\css\\Index.css",
+      "PackagePath": "staticwebassets\\css\\Index.css"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\js\\ChatBot.js",
+      "PackagePath": "staticwebassets\\js\\ChatBot.js"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\js\\Index.js",
+      "PackagePath": "staticwebassets\\js\\Index.js"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.AichatBot3.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.AichatBot3.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.AichatBot3.props",
+      "PackagePath": "build\\AichatBot3.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.AichatBot3.props",
+      "PackagePath": "buildMultiTargeting\\AichatBot3.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.AichatBot3.props",
+      "PackagePath": "buildTransitive\\AichatBot3.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

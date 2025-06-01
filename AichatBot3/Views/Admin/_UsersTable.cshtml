@@ -1,0 +1,192 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using AichatBot3.ViewModels
+@model UserTableViewModel
+
+<div class="d-flex justify-content-between align-items-center mb-3 mt-4">
+    <h2 class="mb-0">Users List</h2>
+    <div>
+    <a class="btn btn-warning mx-3" asp-controller="Admin" asp-action="ListRoles">Manage Roles</a>
+
+    <a asp-action="CreateUser" class="btn btn-success">Create New User</a>
+
+    </div>
+</div>
+
+<table class="table table-striped table-bordered align-middle text-center">
+    <thead class="table-dark">
+        <tr>
+            <th>S.No</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Email Confirmed</th>
+            <th>2FA Enabled</th>
+            <th>Lockout End</th>
+            <th>Access Failed Count</th>
+            <th>Roles</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Users != null && Model.Users.Any())
+        {
+            var serialNumber = ((Model.PageNumber - 1) * Model.PageSize) + 1;
+
+            @foreach (var user in Model.Users)
+            {
+                <tr>
+                    <td>@serialNumber</td>
+                    <td>@user.UserName</td>
+                    <td>@user.Email</td>
+                    <td>@user.EmailConfirmed</td>
+                    <td>@user.TwoFactorEnabled</td>
+                    <td>
+                        @(user.LockoutEnd.HasValue && user.LockoutEnd > DateTimeOffset.UtcNow
+                            ? user.LockoutEnd.Value.UtcDateTime.ToString("g")
+                            : "Not Locked")
+                    </td>
+                    <td>@user.AccessFailedCount</td>
+                    <td>
+                        @if (user.Roles != null && user.Roles.Any())
+                        {
+                            @string.Join(", ", user.Roles)
+                        }
+                        else
+                        {
+                            <span class="text-muted">None</span>
+                        }
+                    </td>
+                    <td>
+                        <a asp-action="EditUser" asp-controller="Admin" asp-route-id="@user.Id" class="btn btn-warning mb-1">Edit</a>
+                        <button class="btn btn-danger mb-1" data-bs-toggle="modal" data-bs-target="#deleteModal" data-user-id="@user.Id" data-user-name="@user.UserName">Delete</button>
+                        @if (user.LockoutEnd.HasValue && user.LockoutEnd > DateTimeOffset.UtcNow)
+                        {
+                            <form asp-action="UnlockUser" method="post" style="display:inline"><input type="hidden" name="id" value="@user.Id" /><button type="submit" class="btn btn-success mb-1">Unlock</button></form>
+                        }
+                        else
+                        {
+                            <form asp-action="LockUser" method="post" style="display:inline"><input type="hidden" name="id" value="@user.Id" /><button type="submit" class="btn btn-dark mb-1">Lock</button></form>
+                        }
+                    </td>
+                </tr>
+                serialNumber++;
+            }
+        }
+        else
+        {
+            <tr><td colspan="8" class="text-center">No users found.</td></tr>
+        }
+    </tbody>
+</table>
+
+@* MANUAL PAGINATION CONTROLS (Basic Example) *@
+@* REVISED MANUAL PAGINATION CONTROLS (With Page Numbers) *@
+@if (Model.TotalPages > 1)
+{
+    // --- Settings ---
+    int currentPage = Model.PageNumber;
+    int totalPages = Model.TotalPages;
+    int maxPagesToShow = 5; // How many numbered links to show max (adjust as needed)
+    int startPage, endPage;
+
+    // --- Calculate page range logic ---
+    if (totalPages <= maxPagesToShow)
+    {
+        // Less than maxPagesToShow total pages, so show all
+        startPage = 1;
+        endPage = totalPages;
+    }
+    else
+    {
+        // More than maxPagesToShow total pages, calculate sliding window
+        int maxPagesBeforeCurrent = (int)Math.Floor((decimal)maxPagesToShow / 2);
+        int maxPagesAfterCurrent = (int)Math.Ceiling((decimal)maxPagesToShow / 2) - 1;
+
+        if (currentPage <= maxPagesBeforeCurrent)
+        {
+            // Near the start
+            startPage = 1;
+            endPage = maxPagesToShow;
+        }
+        else if (currentPage + maxPagesAfterCurrent >= totalPages)
+        {
+            // Near the end
+            startPage = totalPages - maxPagesToShow + 1;
+            endPage = totalPages;
+        }
+        else
+        {
+            // Somewhere in the middle
+            startPage = currentPage - maxPagesBeforeCurrent;
+            endPage = currentPage + maxPagesAfterCurrent;
+        }
+    }
+    // --- End Calculate page range ---
+
+    <nav aria-label="User pagination">
+        <ul class="pagination justify-content-center">
+
+            @* Previous Button *@
+            <li class="page-item @(currentPage <= 1 ? "disabled" : "")">
+                <a class="page-link" href="#" data-page="@(currentPage - 1)" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+
+            @* Optional: Link to First Page if not already visible *@
+            @if (startPage > 1)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="#" data-page="1">1</a>
+                </li>
+                @if (startPage > 2)
+                {
+                    @* Ellipsis indicates gap after first page *@
+                    <li class="page-item disabled"><span class="page-link">...</span></li>
+                }
+            }
+
+            @* Numbered Page Links *@
+            @for (int i = startPage; i <= endPage; i++)
+            {
+                <li class="page-item @(i == currentPage ? "active" : "")" @(i == currentPage ? "aria-current=\"page\"" : "")>
+                    @if (i == currentPage)
+                    {
+                        <span class="page-link">@i</span>
+                    }
+                    else
+                    {
+                        <a class="page-link" href="#" data-page="@i">@i</a>
+                    }
+                </li>
+            }
+
+            @* Optional: Link to Last Page if not already visible *@
+            @if (endPage < totalPages)
+            {
+                @if (endPage < totalPages - 1)
+                {
+                    @* Ellipsis indicates gap before last page *@
+                    <li class="page-item disabled"><span class="page-link">...</span></li>
+                }
+                <li class="page-item">
+                    <a class="page-link" href="#" data-page="@totalPages">@totalPages</a>
+                </li>
+            }
+
+            @* Next Button *@
+            <li class="page-item @(currentPage >= totalPages ? "disabled" : "")">
+                <a class="page-link" href="#" data-page="@(currentPage + 1)" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+    <div class="text-center text-muted mt-2">
+        Page @Model.PageNumber of @Model.TotalPages (@Model.TotalItemCount Total Users)
+    </div>
+}
+
+
+
+

@@ -1,0 +1,27 @@
+﻿@page
+@model RegisterConfirmationModel
+@{
+    ViewData["Title"] = "Register Confirmation";
+}
+
+<div class="confirmation-container">
+    <h1>@ViewData["Title"]</h1>
+
+    @if (@Model.DisplayConfirmAccountLink)
+    {
+        <div class="alert alert-success">
+            <p>
+                Please check your email to confirm your account. If you don't see it, please check your spam folder.
+            </p>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger">
+            <p>
+                We were unable to send a confirmation email. Please try again later.
+            </p>
+        </div>
+    }
+
+   

@@ -1,0 +1,93 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+
+<!-- Main Container -->
+<div class="min-h-screen bg-gray-100 flex flex-col">
+    <!-- Header -->
+    <header class="bg-white shadow w-full">
+        <div class="max-w-7xl mx-auto py-6 px-4 text-center">
+            <h1 class="text-4xl font-bold text-gray-900">Admin Dashboard</h1>
+            <p class="mt-2 text-xl text-gray-600">Only users with the <strong>Admin</strong> role can access this page.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto py-10 px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+            <!-- Total Users Card -->
+            <div class="w-full max-w-sm transform hover:scale-105 transition duration-300">
+                <div class="bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl shadow-xl overflow-hidden">
+                    <div class="p-8 text-center text-white">
+                        <div class="mb-4">
+                            <i class="fas fa-users fa-3x"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Total Users</h3>
+                        <p class="text-3xl font-extrabold">@ViewData["TotalUsers"]</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Locked Users Card -->
+            <div class="w-full max-w-sm transform hover:scale-105 transition duration-300">
+                <div class="bg-gradient-to-r from-red-500 to-pink-600 rounded-xl shadow-xl overflow-hidden">
+                    <div class="p-8 text-center text-white">
+                        <div class="mb-4">
+                            <i class="fas fa-lock fa-3x"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Locked Users</h3>
+                        <p class="text-3xl font-extrabold">@ViewData["LockedUsers"]</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Registrations (24hrs) Card -->
+            <div class="w-full max-w-sm transform hover:scale-105 transition duration-300">
+                <div class="bg-gradient-to-r from-green-500 to-green-700 rounded-xl shadow-xl overflow-hidden">
+                    <div class="p-8 text-center text-white">
+                        <div class="mb-4">
+                            <i class="fas fa-user-plus fa-3x"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">New Registrations (24hrs)</h3>
+                        <p class="text-3xl font-extrabold">@ViewData["NewRegistrations"]</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email Confirmed Card (Updated for a richer golden tone) -->
+            <div class="w-full max-w-sm transform hover:scale-105 transition duration-300">
+                <div class="bg-gradient-to-r from-yellow-600 to-yellow-800 rounded-xl shadow-xl overflow-hidden">
+                    <div class="p-8 text-center text-white">
+                        <div class="mb-4">
+                            <i class="fas fa-envelope fa-3x"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Email Confirmed</h3>
+                        <p class="text-3xl font-extrabold">@ViewData["EmailConfirmed"]</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Email Not Confirmed Card -->
+            <div class="w-full max-w-sm transform hover:scale-105 transition duration-300">
+                <div class="bg-gradient-to-r from-gray-500 to-gray-700 rounded-xl shadow-xl overflow-hidden">
+                    <div class="p-8 text-center text-white">
+                        <div class="mb-4">
+                            <i class="fas fa-envelope-open fa-3x"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Email Not Confirmed</h3>
+                        <p class="text-3xl font-extrabold">@ViewData["EmailNotConfirmed"]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+@section Scripts {
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+}

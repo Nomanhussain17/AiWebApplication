@@ -1,0 +1,503 @@
+@model AichatBot3.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Log in";
+    var returnUrl = ViewData["ReturnUrl"] as string ?? "/";
+}
+
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    :root {
+        --primary-color: #3b82f6;
+        --primary-hover: #2563eb;
+        --facebook-color: #1877F2;
+        --facebook-hover: #166FE5;
+        --text-dark: #1f2937;
+        --text-light-dark: #374151;
+        --text-light: #4b5563;
+        --text-muted: #6b7280;
+        --border-color: #e5e7eb;
+        --bg-light: #f9fafb;
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+        --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --radius: 0.5rem;
+    }
+
+    body {
+        min-height: 100vh;
+        font-size: 16px;
+        line-height: 1.5;
+        color: var(--text-dark);
+    }
+
+    .min-h-screen {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+    }
+
+    .bg-gradient {
+        background: linear-gradient(180deg, #EEF2FF 0%, #FFFFFF 50%, #EEF2FF 100%);
+    }
+
+    .container {
+        width: 100%;
+        max-width: 35rem;
+        margin: 0 auto;
+    }
+
+    .card {
+        background-color: white;
+        border-radius: var(--radius);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        border: 1px solid var(--border-color);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card-header {
+        padding-top: 1.5rem;
+        text-align: center;
+        background-color: white;
+        border: none;
+    }
+
+    .card-title {
+        font-size: 1.875rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 0.5rem;
+    }
+
+    .card-description {
+        font-size: 1.125rem;
+        color: var(--text-light);
+        margin: 0;
+    }
+
+    .card-content {
+        padding: 1.5rem;
+    }
+
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    label {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--text-dark);
+    }
+
+    input {
+        width: 100%;
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius);
+        background-color: white;
+        font-size: 1rem;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+    .password-header {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+
+    .forgot-link {
+        font-size: 0.75rem;
+        color: var(--primary-color);
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+        .forgot-link:hover {
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
+
+    .primary-button {
+        width: 100%;
+        padding: 0.5rem;
+        border: none;
+        border-radius: var(--radius);
+        background-color: var(--text-dark);
+        color: white;
+        font-weight: 500;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        box-shadow: var(--shadow-sm);
+        margin-top: 0.5rem;
+    }
+
+        .primary-button:hover {
+            background-color: var(--text-light-dark);
+            box-shadow: var(--shadow-md);
+        }
+
+    .separator {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin: 1.5rem 0;
+        color: var(--text-muted);
+        font-size: 0.875rem;
+    }
+
+        .separator::before,
+        .separator::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .separator span {
+            margin: 0 0.75rem;
+        }
+
+    .external-login {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .google-button,
+    .facebook-button {
+        width: 100%;
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        border-radius: var(--radius);
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .google-button {
+        background-color: white;
+        border: 1px solid var(--border-color);
+        color: var(--text-dark);
+    }
+
+        .google-button:hover {
+            background-color: var(--bg-light);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+    .facebook-button {
+        background-color: var(--facebook-color);
+        border: none;
+        color: white;
+    }
+
+        .facebook-button:hover {
+            background-color: var(--facebook-hover);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+    .google-icon,
+    .facebook-icon {
+        height: 1.25rem;
+        width: 1.25rem;
+    }
+
+    .terms-text {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        text-align: center;
+        margin-top: 1.5rem;
+        margin-bottom: 0;
+    }
+
+    .policy-link {
+        color: var(--primary-color);
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+        .policy-link:hover {
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
+
+    .card-footer {
+        @* padding: 1.5rem; *@
+        text-align: center;
+        @* border-top: 1px solid var(--border-color); *@
+        font-size: 0.875rem;
+        color: var(--text-light);
+        background-color: white;
+        border: none;
+    }
+
+    .signup-link {
+        color: var(--primary-color);
+        font-weight: 500;
+        text-decoration: none;
+        margin-left: 0.25rem;
+        transition: color 0.2s ease;
+        margin-top: 0;
+    }
+
+        .signup-link:hover {
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
+
+    /* Responsive design */
+    @@media (max-width: 640px) {
+        .card-title
+
+    {
+        font-size: 1.5rem;
+    }
+
+    .card-content {
+        padding: 1.25rem;
+    }
+
+    .login-form {
+        gap: 1rem;
+    }
+
+    }
+    </style>
+
+
+
+
+@* <head> *@
+@*     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> *@
+@* </head> *@
+
+@* <div class="container mt-5"> *@
+@*     <div class="row justify-content-center"> *@
+@*         <!-- Custom Login Form --> *@
+@*         <div class="col-md-6 col-lg-5"> *@
+@*             <div class="card shadow rounded-4"> *@
+@*                 <div class="card-body"> *@
+@*                     <h3 class="text-center mb-4">Log in to Your Account</h3> *@
+@*                     <form asp-action="Login" method="post"> *@
+@*                         <input type="hidden" asp-for="ReturnUrl" /> *@
+@*                         <div asp-validation-summary="All" class="text-danger mb-3"></div> *@
+
+@*                         <div class="form-floating mb-3"> *@
+@*                             <input asp-for="LoginIdentifier" class="form-control" placeholder="Email or Username" /> *@
+@*                             <label asp-for="LoginIdentifier">Email or Username</label> *@
+@*                             <span asp-validation-for="LoginIdentifier" class="text-danger"></span> *@
+@*                         </div> *@
+
+@*                         <div class="form-floating mb-3"> *@
+@*                             <input asp-for="Password" type="password" class="form-control" placeholder="Password" /> *@
+@*                             <label asp-for="Password">Password</label> *@
+@*                             <span asp-validation-for="Password" class="text-danger"></span> *@
+@*                         </div> *@
+
+@*                         <div class="form-check mb-3"> *@
+@*                             <input asp-for="RememberMe" class="form-check-input" /> *@
+@*                             <label asp-for="RememberMe" class="form-check-label">Remember me</label> *@
+@*                         </div> *@
+
+@*                         <div class="d-grid mb-3"> *@
+@*                             <button type="submit" class="btn btn-success">Log in</button> *@
+@*                         </div> *@
+
+@*                         <p class="text-center"> *@
+@*                             <a asp-action="Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user?</a> *@
+@*                         </p> *@
+@*                     </form> *@
+
+@*                 </div> *@
+@*             </div> *@
+@*         </div> *@
+
+
+
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Professional Login Page</title>
+            <link rel="stylesheet" href="LoginPage.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+        </head>
+        <body>
+            <div class="min-h-screen bg-gradient">
+                <div class="container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h1 class="card-title">Welcome Back</h1>
+                            <p class="card-description">Sign in to access your account</p>
+                        </div>
+
+                        <div class="card-content">
+                            <form class="login-form" asp-action="Login" method="post">
+
+                                <input type="hidden" asp-for="ReturnUrl" /> 
+                                <div asp-validation-summary="All" class="text-danger"></div>
+
+                                <div class="form-group">
+                                    <input asp-for="LoginIdentifier" class="form-control" placeholder="Email or Username" /> 
+                                    <span asp-validation-for="LoginIdentifier" class="text-danger"></span> 
+                                </div>
+
+                                <div class="form-group">
+                                    <input asp-for="Password" type="password" class="form-control" placeholder="Password" /> 
+                                    <span asp-validation-for="Password" class="text-danger"></span> 
+                                    <div class="password-header">
+                                        <a href="#" class="forgot-link">Forgot password?</a>
+                                    </div>
+                                </div>
+
+                                <div class="form-check"> 
+                                    <input asp-for="RememberMe" class="form-check-input p-0" /> 
+                                    <label asp-for="RememberMe" class="form-check-label">Remember me</label> 
+                                </div> 
+
+                                <button type="submit" class="primary-button">Sign In</button>
+                            </form>
+
+                            <div class="separator">
+                                <span>or continue with</span>
+                            </div>
+
+                            <div class="external-login">
+                             <form asp-area="Identity" asp-page="/Account/ExternalLogin" asp-route-returnUrl="/" method="post">
+                                 <input type="hidden" name="provider" value="Google" /> 
+                                 <input type="hidden" name="returnUrl" value="/" /> 
+                                 <button class="google-button">
+                                    <svg class="google-icon" viewBox="0 0 24 24">
+                                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+                                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+                                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+                                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+                                        <path d="M1 1h22v22H1z" fill="none"></path>
+                                    </svg>
+                                    <span>Sign in with Google</span>
+                                </button>
+                             </form>
+
+
+                            <form asp-area="Identity" asp-page="/Account/ExternalLogin" asp-route-returnUrl="/" method="post">
+                                <input type="hidden" name="provider" value="Facebook" />
+                                <input type="hidden" name="returnUrl" value="/" />
+                                <button class="facebook-button">
+                                    <svg class="facebook-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#FFFFFF">
+                                        <path d="M9.19795 21.5H13.198V13.4901H16.8021L17.198 9.50977H13.198V7.5C13.198 6.94772 13.6457 6.5 14.198 6.5H17.198V2.5H14.198C11.4365 2.5 9.19795 4.73858 9.19795 7.5V9.50977H7.19795L6.80206 13.4901H9.19795V21.5Z"></path>
+                                    </svg>
+                                    <span>Sign in with Facebook</span>
+                                </button>
+                            </form>
+                            </div>
+
+                            <p class="terms-text">
+                                By signing in, you agree to our
+                                <a href="#" class="policy-link">Terms</a> and
+                                <a href="#" class="policy-link">Privacy Policy</a>
+                            </p>
+                        </div>
+
+                        <div class="card-footer">
+                            <p>Don't have an account? <a href="#" class="signup-link">Sign up</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="LoginPage.js"></script>
+        </body>
+    </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- External Login Section -->
+        @*<div class="col-md-6 col-lg-5 mt-4 mt-md-0">
+            <div class="card shadow rounded-4">
+                <div class="card-body">
+                    <h4 class="text-center mb-4">Log in with Social Account</h4>
+                    <p class="text-muted text-center">Choose a provider to continue:</p>
+
+                    <form asp-controller="Account" asp-action="ExternalLogin" method="post" class="mb-3">
+                        <input type="hidden" name="ExternalLogin.ProviderDisplayName" value="Google" />
+                        <input type="hidden" name="ExternalLogin.ReturnUrl" value="@returnUrl" />
+                        <button type="submit" class="btn btn-danger w-100 d-flex align-items-center justify-content-center">
+                            <i class="bi bi-google me-2"></i> Login with Google
+                        </button>
+                    </form>
+
+                    <form asp-controller="Account" asp-action="ExternalLogin" method="post">
+                        <input type="hidden" name="ExternalLogin.ProviderDisplayName" value="Facebook" />
+                        <input type="hidden" name="ExternalLogin.ReturnUrl" value="@returnUrl" />
+                        <button type="submit" class="btn btn-primary w-100 d-flex align-items-center justify-content-center">
+                            <i class="bi bi-facebook me-2"></i> Login with Facebook
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+        </div>*@
+
+        @* <form asp-area="Identity" asp-page="/Account/ExternalLogin" asp-route-returnUrl="/" method="post"> *@
+        @*     <input type="hidden" name="provider" value="Google" /> *@
+        @*     <input type="hidden" name="returnUrl" value="/" /> *@
+        @*     <button type="submit" class="btn btn-outline-primary w-100"> *@
+        @*         <i class="bi bi-google"></i> Login with Google *@
+        @*     </button> *@
+        @* </form> *@
+
+
+
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

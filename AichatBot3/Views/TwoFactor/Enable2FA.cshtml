@@ -1,0 +1,17 @@
+﻿@model Enable2FAViewModel
+
+<h2>Enable Two-Factor Authentication</h2>
+
+@if (!Model.TwoFactorEnabled)
+{
+    <p>Email confirmed: @Model.IsEmailConfirmed</p>
+
+    <form asp-action="Send2FACode" method="post">
+        <button type="submit" name="method" value="Email" class="btn btn-primary">Send Code to Email</button>
+    </form>
+
+}
+else
+{
+    <p>2FA is enabled on your account.</p>
+}

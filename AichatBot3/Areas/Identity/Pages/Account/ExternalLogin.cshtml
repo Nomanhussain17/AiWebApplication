@@ -1,0 +1,385 @@
+﻿@page
+@model ExternalLoginModel
+@{
+    ViewData["Title"] = "Complete Registration";
+}
+
+@* <div class="container d-flex align-items-center justify-content-center min-vh-100"> *@
+@*     <div class="card shadow-lg rounded-4 p-4" style="max-width: 500px; width: 100%;"> *@
+@*         <div class="card-body"> *@
+@*             <h2 class="card-title text-center mb-3">@ViewData["Title"]</h2> *@
+@*             <p class="text-muted text-center mb-4"> *@
+@*                 You're signing in with <strong>@Model.ProviderDisplayName</strong>. *@
+@*             </p> *@
+
+@*             <div class="alert alert-info text-center" id="external-login-description"> *@
+@*                 You've successfully authenticated with <strong>@Model.ProviderDisplayName</strong>.<br /> *@
+@*                 Please continue to register using this email address. *@
+@*             </div> *@
+
+@*             <form asp-page-handler="Confirmation" asp-route-returnUrl="@Model.ReturnUrl" method="post" novalidate> *@
+@*                 <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div> *@
+
+@*                 <div class="form-floating mb-3"> *@
+@*                     <input asp-for="Input.Email" class="form-control" autocomplete="email" placeholder="Email address" /> *@
+@*                     <label asp-for="Input.Email">Email Address</label> *@
+@*                     <span asp-validation-for="Input.Email" class="text-danger"></span> *@
+@*                 </div> *@
+
+@*                 <button type="submit" class="btn btn-primary w-100">Register & Continue</button> *@
+@*             </form> *@
+@*         </div> *@
+@*     </div> *@
+@* </div> *@
+
+
+
+<style>
+    /* Base styles */
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    /* Layout */
+    .min-h-screen {
+    min-height: 100vh;
+    }
+
+    .bg-gradient-blue-white {
+    background: linear-gradient(to bottom, #EBF4FF, #FFFFFF);
+    }
+
+    .flex-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    }
+
+    .container {
+    width: 100%;
+    max-width: max-content;
+    }
+
+    /* Card Styling */
+    .card {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    .card-header {
+    padding: 1.5rem;
+    text-align: center;
+    background-color: white;
+    border-bottom: none;
+    }
+
+    .card-content {
+    padding: 0 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    }
+
+    .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    }
+
+    .card-description {
+    font-size: 0.875rem;
+    color: #6B7280;
+    }
+
+    /* Google Logo */
+    .google-connect-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    }
+
+    .logo-circle {
+    height: 2rem;
+    width: 2rem;
+    position: relative;
+    border-radius: 50%;
+    background: #d3d3d34a;
+    }
+
+    .logo-circle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .google-icon {
+    height: 1.25rem;
+    width: 1.25rem;
+    }
+
+    .gradient-text {
+    font-size: 1.25rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #2563EB, #EF4444, #EAB308);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-left: 0.5rem;
+    }
+
+    /* Info Box */
+    .info-box {
+    background-color: #EBF5FF;
+    border-radius: 0.375rem;
+    padding: 1rem;
+    font-size: 0.875rem;
+    color: #1E40AF;
+    }
+
+    .info-box ul {
+    list-style-type: disc;
+    margin-left: 1.25rem;
+    margin-top: 0.5rem;
+    }
+
+    .info-box li {
+    margin-top: 0.25rem;
+    }
+
+    /* Google Button */
+    .google-button, .facebook-button {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background-color: white;
+    color: #374151;
+    border: 1px solid #D1D5DB;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    }
+
+    .google-button, .facebook-button:hover {
+    background-color: #F9FAFB;
+    }
+
+    .google-button-icon, .facebook-button-icon{
+    height: 1.25rem;
+    width: 1.25rem;
+    }
+
+    /* Security Badge */
+    .security-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #6B7280;
+    }
+
+    .security-icon {
+    color: #10B981;
+    }
+
+    /* Separator */
+    .separator {
+    border: none;
+    height: 1px;
+    background-color: #E5E7EB;
+    margin: 0;
+    }
+
+    /* Card Footer */
+    .card-footer {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    }
+
+    .footer-text {
+    font-size: 0.875rem;
+    color: #6B7280;
+    }
+
+    .footer-link {
+    color: #2563EB;
+    text-decoration: none;
+    }
+
+    .footer-link:hover {
+    color: #1D4ED8;
+    text-decoration: underline;
+    }
+
+    /* Home Link */
+    .home-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    }
+
+    .home-link-text {
+    font-size: 0.875rem;
+    color: #6B7280;
+    text-decoration: none;
+    }
+
+    .home-link-text:hover {
+    color: #374151;
+    }
+
+</style>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect with Google</title>
+    @* <link rel="stylesheet" href="./GoogleConnect.css"> *@
+</head>
+<body class="bg-gradient-blue-white">
+    <div class="min-h-screen flex-center">
+        <div class="container">
+            <div class="card">
+                <div class="card-header text-center">
+                    <div class="google-connect-logo">
+                        @if(Model.ProviderDisplayName == "Google"){
+                            <div class="logo-circle">
+                                <svg class="google-icon" viewBox="0 0 24 24">
+                                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+                                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+                                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+                                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+                                    <path d="M1 1h22v22H1z" fill="none"></path>
+                                </svg>
+                            </div>
+                        }else if(Model.ProviderDisplayName == "Facebook")
+                        {
+                            <div class="logo-circle">
+                                <svg class="facebook-button-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#1877F2">
+                                    <path d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.406.593 24 1.325 24h11.498v-9.294H9.69v-3.622h3.133V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.464.099 2.796.143v3.24l-1.919.001c-1.504 0-1.796.715-1.796 1.763v2.31h3.588l-.467 3.622h-3.121V24h6.116C23.406 24 24 23.406 24 22.674V1.326C24 .593 23.406 0 22.675 0z" />
+                                </svg>
+                            </div>
+                        }
+                        <div class="gradient-text">Account Connect</div>
+                    </div>
+                    <h3 class="card-title">Connect with @Model.ProviderDisplayName</h3>
+                    <p class="card-description">Link your @Model.ProviderDisplayName account to access all features</p>
+                </div>
+
+                <div class="card-content">
+                    <div class="info-box">
+                        <p>You're about to connect your @Model.ProviderDisplayName account. This will allow:</p>
+                        <ul>
+                            <li>Quickw and secure sign-in</li>
+                            <li>Personalized content based on your preferences</li>
+                            <li>Access to exclusive features</li>
+                        </ul>
+                    </div>
+
+                    @if (Model.ProviderDisplayName == "Google")
+                    {
+                        <form asp-page-handler="Confirmation" asp-route-returnUrl="@Model.ReturnUrl" method="post" novalidate>
+                            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                            <div class="form-floating mb-3">
+                                <input asp-for="Input.Email" class="form-control" autocomplete="email" placeholder="Email address" readonly />
+                                <label asp-for="Input.Email">Email Address</label>
+                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                            </div>
+                          
+                            <button id="googleSignIn" class="google-button">
+                                <svg class="google-button-icon" viewBox="0 0 24 24">
+                                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+                                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+                                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+                                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+                                    <path d="M1 1h22v22H1z" fill="none"></path>
+                                </svg>
+                                <span>Connect with Google</span>
+                            </button>
+                        </form>
+                    }
+                    else if (Model.ProviderDisplayName == "Facebook")
+                    {
+                        <form asp-page-handler="Confirmation" asp-route-returnUrl="@Model.ReturnUrl" method="post" novalidate>
+                            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                            <div class="form-floating mb-3">
+                                <input asp-for="Input.Email" class="form-control" autocomplete="email" placeholder="Email address" readonly />
+                                <label asp-for="Input.Email">Email Address</label>
+                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                            </div>
+
+                            <button id="facebookSignIn" class="facebook-button">
+                                <svg class="facebook-button-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#1877F2">
+                                    <path d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.406.593 24 1.325 24h11.498v-9.294H9.69v-3.622h3.133V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.464.099 2.796.143v3.24l-1.919.001c-1.504 0-1.796.715-1.796 1.763v2.31h3.588l-.467 3.622h-3.121V24h6.116C23.406 24 24 23.406 24 22.674V1.326C24 .593 23.406 0 22.675 0z" />
+                                </svg>
+                                <span>Connect with Facebook</span>
+                            </button>
+                        </form>
+                    }
+
+                    <div class="security-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="security-icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                        <span>Secure connection - Your data remains private</span>
+                    </div>
+                </div>
+
+                <hr class="separator">
+
+                <div class="card-footer">
+                    <p class="footer-text">
+                        Don't have a @Model.ProviderDisplayName account?
+                        @if (Model.ProviderDisplayName == "Google")
+                        {
+                            <a href="https://accounts.google.com/signup" target="_blank" rel="noopener noreferrer" class="footer-link">
+                                Create one now
+                            </a>
+                        } else if (Model.ProviderDisplayName == "Facebook")
+                        {
+                            <a href="https://www.facebook.com/signup" target="_blank" rel="noopener noreferrer" class="footer-link">
+                                Create one now
+                            </a>
+                        }
+                    </p>
+                </div>
+            </div>
+
+            <div class="home-link">
+                <a href="/" class="home-link-text">Return to homepage</a>
+            </div>
+        </div>
+    </div>
+
+    @* <script src="./GoogleConnect.js"></script> *@
+</body>
+</html>
+
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
