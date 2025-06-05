@@ -9,6 +9,8 @@
       "AichatBot3/1.0.0": {
         "dependencies": {
           "MailKit": "4.11.0",
+          "Markdig": "0.41.1",
+          "Markdig.SyntaxHighlighting": "1.1.7",
           "Microsoft.AspNetCore.Authentication.Facebook": "6.0.36",
           "Microsoft.AspNetCore.Authentication.Google": "6.0.36",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.35",
@@ -31,6 +33,14 @@
           "lib/net6.0/BouncyCastle.Cryptography.dll": {
             "assemblyVersion": "2.0.0.0",
             "fileVersion": "2.5.1.28965"
+          }
+        }
+      },
+      "ColorCode.Portable/1.0.3": {
+        "runtime": {
+          "lib/portable45-net45+win8+wp8+wpa81/ColorCode.dll": {
+            "assemblyVersion": "1.0.3.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -583,6 +593,26 @@
           "lib/netstandard2.1/MailKit.dll": {
             "assemblyVersion": "4.11.0.0",
             "fileVersion": "4.11.0.0"
+          }
+        }
+      },
+      "Markdig/0.41.1": {
+        "runtime": {
+          "lib/netstandard2.1/Markdig.dll": {
+            "assemblyVersion": "0.41.0.0",
+            "fileVersion": "0.41.1.0"
+          }
+        }
+      },
+      "Markdig.SyntaxHighlighting/1.1.7": {
+        "dependencies": {
+          "ColorCode.Portable": "1.0.3",
+          "Markdig": "0.41.1"
+        },
+        "runtime": {
+          "lib/portable45-net45+win8+wp8+wpa81/Markdig.SyntaxHighlighting.dll": {
+            "assemblyVersion": "1.1.7.0",
+            "fileVersion": "1.1.7.0"
           }
         }
       },
@@ -2638,6 +2668,13 @@
       "path": "bouncycastle.cryptography/2.5.1",
       "hashPath": "bouncycastle.cryptography.2.5.1.nupkg.sha512"
     },
+    "ColorCode.Portable/1.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GYX9N87XT7L2+/SL3OFSxFn2tKnnsmhBkCXrn3o+R2mKTLD2R/PuSasBnsfa0tSSiXNjs8pxVPxI13kU0j28qA==",
+      "path": "colorcode.portable/1.0.3",
+      "hashPath": "colorcode.portable.1.0.3.nupkg.sha512"
+    },
     "Humanizer/2.14.1": {
       "type": "package",
       "serviceable": true,
@@ -2994,6 +3031,20 @@
       "sha512": "sha512-JVoRxJ+QRqFMRtEM4veStj3pMLBPRulQGV+iZm6Tq1pnr66Dy6dFYOW9Uw02nxAVzdZAN8G+y3BsUPtgZcKXhA==",
       "path": "mailkit/4.11.0",
       "hashPath": "mailkit.4.11.0.nupkg.sha512"
+    },
+    "Markdig/0.41.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-e9QXUg2agxd9iWV3hO5fA4Qp2avMuXFiElatzD8hp69yIEgESrdhKvDFf9y9NOlPe9jO7AA6W1JAnntLmqwRwA==",
+      "path": "markdig/0.41.1",
+      "hashPath": "markdig.0.41.1.nupkg.sha512"
+    },
+    "Markdig.SyntaxHighlighting/1.1.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BDCVfU194qruwOSspgK9S0vOco1xZfXYExegf64yzTs99XD1+3032FRz3fDFepcDMz0PSklMHGMqm0IlI/395Q==",
+      "path": "markdig.syntaxhighlighting/1.1.7",
+      "hashPath": "markdig.syntaxhighlighting.1.1.7.nupkg.sha512"
     },
     "MessagePack/2.1.152": {
       "type": "package",

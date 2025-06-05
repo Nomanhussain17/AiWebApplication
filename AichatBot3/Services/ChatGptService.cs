@@ -11,7 +11,7 @@ namespace AichatBot3.Service
         public ChatGptService(IConfiguration configuration)
         {
             _httpClient = new HttpClient();
-            _httpClient.Timeout = TimeSpan.FromSeconds(60); // Increase timeout to 60 seconds
+            _httpClient.Timeout = TimeSpan.FromSeconds(60);
             _apiKey = configuration["OpenAI:ApiKey"];
         }
 
@@ -21,14 +21,16 @@ namespace AichatBot3.Service
             {
                 var requestBody = new
                 {
-                    model = "google/gemma-3-1b-it:free",
+                    model = "deepseek/deepseek-r1-0528:free",
+                    //model = "deepseek/deepseek-r1-0528-qwen3-8b:free",
+                    //model = "google/gemma-3-1b-it:free",
                     messages = new[]
                     {
-                    new { role = "system", content = "You are a intelligent Ai assistant.dont use *" },
-                    new { role = "user", content = userMessage }
-                },
-                    max_tokens = 1000,  // Controls response length
-                    temperature = 0.7  // Controls randomness
+                        new { role = "system", content = "You are an intelligent AI assistant. Use proper markdown formatting for tables, code blocks, and structured responses. Format code with ```language syntax." },
+                        new { role = "user", content = userMessage }
+                    },
+                    max_tokens = 1000,
+                    temperature = 0.7
                 };
 
                 var jsonContent = new StringContent(JsonSerializer.Serialize(requestBody), Encoding.UTF8, "application/json");
@@ -36,8 +38,6 @@ namespace AichatBot3.Service
                 _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _apiKey);
 
                 var response = await _httpClient.PostAsync("https://openrouter.ai/api/v1/chat/completions", jsonContent);
-
-                // Get response content for better error handling
                 var responseContent = await response.Content.ReadAsStringAsync();
 
                 if (!response.IsSuccessStatusCode)

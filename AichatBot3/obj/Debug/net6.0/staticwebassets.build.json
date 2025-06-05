@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8ImG4z2iQ0sH6jlX7VjEe9cgCj4bQrze75N7Lz4BPgg=",
+  "Hash": "R7y35hUvz+ZW1WDSSFrDT/1KqTk2koolNiwU4Vgm3Fs=",
   "Source": "AichatBot3",
   "BasePath": "_content/AichatBot3",
   "Mode": "Default",
@@ -1333,8 +1333,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "rpczhotpdr",
-      "Integrity": "4bMh1kRSDyaSG4k52129C96SkVUlYF98nBsunp/D/fY=",
+      "Fingerprint": "gyczbrn7k4",
+      "Integrity": "WJNEjsZaOjZ35Q/SpXVTT7hrgkdFG5dSmLNM/vV3/sY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\ChatBot.css"
@@ -1585,8 +1585,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "fjl8oopej5",
-      "Integrity": "9VisBPYkDXSbp/OpjDUMzraRaGKo6IWg34a+ggOg+MQ=",
+      "Fingerprint": "6u0eptw4zf",
+      "Integrity": "vkhJ5/q39ah/rB3kl3KzWK1wJ/MILMfcHv/01KaS4IY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\ChatBot.js"
@@ -3007,7 +3007,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1625"
+          "Value": "14532"
         },
         {
           "Name": "Content-Type",
@@ -3015,11 +3015,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"4bMh1kRSDyaSG4k52129C96SkVUlYF98nBsunp/D/fY=\""
+          "Value": "\"WJNEjsZaOjZ35Q/SpXVTT7hrgkdFG5dSmLNM/vV3/sY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 11 Apr 2025 04:11:21 GMT"
+          "Value": "Wed, 04 Jun 2025 02:56:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3029,12 +3029,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-4bMh1kRSDyaSG4k52129C96SkVUlYF98nBsunp/D/fY="
+          "Value": "sha256-WJNEjsZaOjZ35Q/SpXVTT7hrgkdFG5dSmLNM/vV3/sY="
         }
       ]
     },
     {
-      "Route": "css/ChatBot.rpczhotpdr.css",
+      "Route": "css/ChatBot.gyczbrn7k4.css",
       "AssetFile": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\css\\ChatBot.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3044,7 +3044,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1625"
+          "Value": "14532"
         },
         {
           "Name": "Content-Type",
@@ -3052,11 +3052,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"4bMh1kRSDyaSG4k52129C96SkVUlYF98nBsunp/D/fY=\""
+          "Value": "\"WJNEjsZaOjZ35Q/SpXVTT7hrgkdFG5dSmLNM/vV3/sY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 11 Apr 2025 04:11:21 GMT"
+          "Value": "Wed, 04 Jun 2025 02:56:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3066,7 +3066,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "rpczhotpdr"
+          "Value": "gyczbrn7k4"
         },
         {
           "Name": "label",
@@ -3074,7 +3074,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-4bMh1kRSDyaSG4k52129C96SkVUlYF98nBsunp/D/fY="
+          "Value": "sha256-WJNEjsZaOjZ35Q/SpXVTT7hrgkdFG5dSmLNM/vV3/sY="
         }
       ]
     },
@@ -6201,7 +6201,7 @@
       ]
     },
     {
-      "Route": "js/ChatBot.fjl8oopej5.js",
+      "Route": "js/ChatBot.6u0eptw4zf.js",
       "AssetFile": "C:\\Users\\SYED\\source\\repos\\AichatBot3\\AichatBot3\\wwwroot\\js\\ChatBot.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -6211,7 +6211,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3878"
+          "Value": "6111"
         },
         {
           "Name": "Content-Type",
@@ -6219,11 +6219,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"9VisBPYkDXSbp/OpjDUMzraRaGKo6IWg34a+ggOg+MQ=\""
+          "Value": "\"vkhJ5/q39ah/rB3kl3KzWK1wJ/MILMfcHv/01KaS4IY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 11 Apr 2025 04:11:21 GMT"
+          "Value": "Wed, 04 Jun 2025 02:31:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6233,7 +6233,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "fjl8oopej5"
+          "Value": "6u0eptw4zf"
         },
         {
           "Name": "label",
@@ -6241,7 +6241,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-9VisBPYkDXSbp/OpjDUMzraRaGKo6IWg34a+ggOg+MQ="
+          "Value": "sha256-vkhJ5/q39ah/rB3kl3KzWK1wJ/MILMfcHv/01KaS4IY="
         }
       ]
     },
@@ -6256,7 +6256,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3878"
+          "Value": "6111"
         },
         {
           "Name": "Content-Type",
@@ -6264,11 +6264,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"9VisBPYkDXSbp/OpjDUMzraRaGKo6IWg34a+ggOg+MQ=\""
+          "Value": "\"vkhJ5/q39ah/rB3kl3KzWK1wJ/MILMfcHv/01KaS4IY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 11 Apr 2025 04:11:21 GMT"
+          "Value": "Wed, 04 Jun 2025 02:31:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6278,7 +6278,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-9VisBPYkDXSbp/OpjDUMzraRaGKo6IWg34a+ggOg+MQ="
+          "Value": "sha256-vkhJ5/q39ah/rB3kl3KzWK1wJ/MILMfcHv/01KaS4IY="
         }
       ]
     },

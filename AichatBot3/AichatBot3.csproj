@@ -8,6 +8,8 @@
 
 	<ItemGroup>
 		<PackageReference Include="MailKit" Version="4.11.0" />
+		<PackageReference Include="Markdig" Version="0.41.1" />
+		<PackageReference Include="Markdig.SyntaxHighlighting" Version="1.1.7" />
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="6.0.36" />
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="6.0.36" />
 		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.35" />

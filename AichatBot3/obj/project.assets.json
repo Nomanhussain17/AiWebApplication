@@ -15,6 +15,15 @@
           }
         }
       },
+      "ColorCode.Portable/1.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/portable45-net45+win8+wp8+wpa81/ColorCode.dll": {}
+        },
+        "runtime": {
+          "lib/portable45-net45+win8+wp8+wpa81/ColorCode.dll": {}
+        }
+      },
       "Humanizer/2.14.1": {
         "type": "package",
         "dependencies": {
@@ -624,6 +633,32 @@
           "lib/netstandard2.1/MailKit.dll": {
             "related": ".dll.config;.pdb;.xml"
           }
+        }
+      },
+      "Markdig/0.41.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Markdig.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Markdig.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Markdig.SyntaxHighlighting/1.1.7": {
+        "type": "package",
+        "dependencies": {
+          "ColorCode.Portable": "1.0.3",
+          "Markdig": "0.11.0"
+        },
+        "compile": {
+          "lib/portable45-net45+win8+wp8+wpa81/Markdig.SyntaxHighlighting.dll": {}
+        },
+        "runtime": {
+          "lib/portable45-net45+win8+wp8+wpa81/Markdig.SyntaxHighlighting.dll": {}
         }
       },
       "MessagePack/2.1.152": {
@@ -3851,6 +3886,18 @@
         "packageIcon.png"
       ]
     },
+    "ColorCode.Portable/1.0.3": {
+      "sha512": "GYX9N87XT7L2+/SL3OFSxFn2tKnnsmhBkCXrn3o+R2mKTLD2R/PuSasBnsfa0tSSiXNjs8pxVPxI13kU0j28qA==",
+      "type": "package",
+      "path": "colorcode.portable/1.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "colorcode.portable.1.0.3.nupkg.sha512",
+        "colorcode.portable.nuspec",
+        "lib/portable45-net45+win8+wp8+wpa81/ColorCode.dll"
+      ]
+    },
     "Humanizer/2.14.1": {
       "sha512": "/FUTD3cEceAAmJSCPN9+J+VhGwmL/C12jvwlyM1DFXShEMsBzvLzLqSrJ2rb+k/W2znKw7JyflZgZpyE+tI7lA==",
       "type": "package",
@@ -4635,6 +4682,41 @@
         "lib/netstandard2.1/MailKit.xml",
         "mailkit.4.11.0.nupkg.sha512",
         "mailkit.nuspec"
+      ]
+    },
+    "Markdig/0.41.1": {
+      "sha512": "e9QXUg2agxd9iWV3hO5fA4Qp2avMuXFiElatzD8hp69yIEgESrdhKvDFf9y9NOlPe9jO7AA6W1JAnntLmqwRwA==",
+      "type": "package",
+      "path": "markdig/0.41.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/Markdig.dll",
+        "lib/net462/Markdig.xml",
+        "lib/net8.0/Markdig.dll",
+        "lib/net8.0/Markdig.xml",
+        "lib/net9.0/Markdig.dll",
+        "lib/net9.0/Markdig.xml",
+        "lib/netstandard2.0/Markdig.dll",
+        "lib/netstandard2.0/Markdig.xml",
+        "lib/netstandard2.1/Markdig.dll",
+        "lib/netstandard2.1/Markdig.xml",
+        "markdig.0.41.1.nupkg.sha512",
+        "markdig.nuspec",
+        "markdig.png",
+        "readme.md"
+      ]
+    },
+    "Markdig.SyntaxHighlighting/1.1.7": {
+      "sha512": "BDCVfU194qruwOSspgK9S0vOco1xZfXYExegf64yzTs99XD1+3032FRz3fDFepcDMz0PSklMHGMqm0IlI/395Q==",
+      "type": "package",
+      "path": "markdig.syntaxhighlighting/1.1.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/portable45-net45+win8+wp8+wpa81/Markdig.SyntaxHighlighting.dll",
+        "markdig.syntaxhighlighting.1.1.7.nupkg.sha512",
+        "markdig.syntaxhighlighting.nuspec"
       ]
     },
     "MessagePack/2.1.152": {
@@ -10892,6 +10974,8 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "MailKit >= 4.11.0",
+      "Markdig >= 0.41.1",
+      "Markdig.SyntaxHighlighting >= 1.1.7",
       "Microsoft.AspNetCore.Authentication.Facebook >= 6.0.36",
       "Microsoft.AspNetCore.Authentication.Google >= 6.0.36",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.35",
@@ -10960,6 +11044,14 @@
           "MailKit": {
             "target": "Package",
             "version": "[4.11.0, )"
+          },
+          "Markdig": {
+            "target": "Package",
+            "version": "[0.41.1, )"
+          },
+          "Markdig.SyntaxHighlighting": {
+            "target": "Package",
+            "version": "[1.1.7, )"
           },
           "Microsoft.AspNetCore.Authentication.Facebook": {
             "target": "Package",
@@ -11032,5 +11124,27 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.204\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'ColorCode.Portable 1.0.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "ColorCode.Portable",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Markdig.SyntaxHighlighting 1.1.7' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Markdig.SyntaxHighlighting",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
